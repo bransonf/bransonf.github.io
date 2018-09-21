@@ -5,7 +5,7 @@ email: branson.fox@slu.edu
 description: The personal website of Branson Fox
 baseurl: "/home" # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site
-author:Branson Fox
+author: Branson Fox
 city: Saint Louis
 state: M0
 zip_code: 63103
