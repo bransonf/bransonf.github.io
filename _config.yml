@@ -17,7 +17,7 @@ tiles-source: pages # accepts "posts" or "pages"
 tiles-count: 6
 
 # social settings
-github_url:https://github.com/bransonf
+github_url: https://github.com/bransonf
 twitter_url: https://twitter.com/Branson_Fox
 linkedin_url: https://www.linkedin.com/in/bransonf/
 
