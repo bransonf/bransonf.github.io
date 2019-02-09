@@ -1,7 +1,0 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-#os generated files 
-._*
