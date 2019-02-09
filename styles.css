@@ -1,0 +1,33 @@
+<style>
+/* Style the body */
+    a:active{color: white;
+    }
+    a:visited{color:white;
+    }
+    
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+/* Header/Logo Title */
+.header {
+  padding: 30px;
+  text-align: left;
+  background: #3567A0;
+  color: white;
+  font-size: 30px;
+}
+
+/* Page Content */
+.content {padding:20px;}
+</style>
+
+@font-face {
+  font-family: Libre;
+  src: url("fonts/LibreBaskerville-Regular.ttf");
+}
+
+div {
+  font-family: Libre;
+}
