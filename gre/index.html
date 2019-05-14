@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>GRE Flash Cards</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     
@@ -20,15 +23,17 @@
     </head>
     <body>
 
-        <h1 class="center">GRE Vocabulary Practice</h1>
+        <h1 class="center txt">GRE Vocabulary Practice</h1>
             <section class="container center">
               <div class="card" onclick="flip()">
-                <div id="card_f" class="front txt"></div>
-                <div id="card_b" class="back txt"></div>
+                <div class="front txt">
+                  <p id="card_f"></p></div>
+                <div class="back txt"><p id = card_b>
+                    </p></div>
               </div>
             </section>
         
-            <button class="center btn btn-1 btn-1a" onclick="draw(words)" style="margin-left:10px">Draw A New Card</button>
+            <button class="center btn btn-1 btn-1a" onclick="draw(words)">Draw A New Card</button>
         
         
         
