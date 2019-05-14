@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GRE Flash Cards</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+        <script src="data/words.json"></script>
+        <script src="https://unpkg.com/jquery@1.11.2/dist/jquery.min.js"></script>
+        <script src="js/flip.js"></script>
+        
+    </head>
+    <body>
+
+        <h1 class="center">GRE Vocabulary Practice</h1>
+            <section class="container center">
+              <div class="card" onclick="flip()">
+                <div id="card_f" class="front txt"></div>
+                <div id="card_b" class="back txt"></div>
+              </div>
+            </section>
+        
+            <button class="center btn btn-1 btn-1a" onclick="draw(words)" style="margin-left:10px">Draw A New Card</button>
+        
+        
+        
+        
+    </body>
+</html>
