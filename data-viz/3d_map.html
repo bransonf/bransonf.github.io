@@ -47,7 +47,8 @@
         var heatLayer = new maptalks.HeatLayer('heat', data).addTo(map);
         
         heatLayer.config({
-                'gradient' : {0.4: "purple", 0.6: "blue", 0.7: "green", 0.8: "lightgreen", 1: "yellow"}
+                'gradient' : {0.4: "purple", 0.6: "blue", 0.7: "green", 0.8: "lightgreen", 1: "yellow"},
+		'radius'   : 15
             });
 
         // Add control
