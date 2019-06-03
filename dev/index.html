@@ -34,6 +34,10 @@
         <!-- Open links in parent windows -->
         <base target="_parent">
         
+        <!-- GitHub Calendar -->
+        <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css">
+        
     </head>
     <!-- END HEAD -->
 
@@ -94,6 +98,20 @@
         <!--========== SLIDER ==========-->
 
         <!--========== PAGE LAYOUT ==========-->
+        <!-- Github Calendar -->
+        <div id="gh-calendar" class="bg-color-sky-light">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="gh_cal">
+                    Loading GithHub Calendar...
+                    </div>
+                </div>
+                <!--// end row -->
+            </div>
+
+        </div>
+        <!-- Calendar -->
+        
         <!-- R Package -->
         <div id="pkg1">
             <div class="container content-lg">
@@ -221,6 +239,9 @@
             </div>
         </footer>
         <!--========== END FOOTER ==========-->
+        
+        <!-- GitHub Calendar -->
+        <script>GitHubCalendar(".gh_cal", "bransonf", { responsive: true }); </script>
 
         <!-- Back To Top -->
         <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
