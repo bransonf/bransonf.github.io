@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>A scattering of cars</title>
+    <meta name="description" content= "A scattering of cars">
+    <script crossorigin src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script crossorigin src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.0.2/dist/aframe-extras.primitives.js"></script>
+    <script crossorigin src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    </head>
+    <body>
+        <a-scene >
+            <a-assets>
+                
+            </a-assets>
+
+            <!-- Entities added in R -->
+            <a-camera position="0 1.6 3">
+              <a-cursor position="0 0 3"></a-cursor>
+              <a-text id="labelview" value color="#000000" font="roboto" align="center" geometry="primitive: box; width: 0.2; height: 0.2; depth: 0.2;" material="transparent: true; opacity: 0;" scale="0.4 0.4 0.4" position="0 -0.4 -1"></a-text>
+            </a-camera>
+            <a-entity position="0 0.1 -3">
+              <a-entity line="start: 0 0 0; end: 3 0 0; color: #000000;" children=""></a-entity>
+              <a-entity line="start: 0 0 0; end: 0 3 0; color: #000000;" children=""></a-entity>
+              <a-entity line="start: 0 0 0; end: 0 0 3; color: #000000;" children=""></a-entity>
+              <a-sphere position="0.614840989399293 1.3531914893617 0.849143441575045" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Mazda RX4;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Mazda RX4;"></a-sphere>
+              <a-sphere position="0.614840989399293 1.3531914893617 1.04474558936333" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Mazda RX4 Wag;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Mazda RX4 Wag;"></a-sphere>
+              <a-sphere position="0.434628975265018 1.58297872340426 0.619023267706469" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Datsun 710;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Datsun 710;"></a-sphere>
+              <a-sphere position="0.614840989399293 1.40425531914894 1.30554845308105" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Hornet 4 Drive;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Hornet 4 Drive;"></a-sphere>
+              <a-sphere position="1.30388692579505 1.05957446808511 1.47813858348249" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Hornet Sportabout;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Hornet Sportabout;"></a-sphere>
+              <a-sphere position="0.561837455830389 0.982978723404255 1.49347992840706" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Valiant;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Valiant;"></a-sphere>
+              <a-sphere position="2.04593639575972 0.497872340425532 1.5778573254922" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Duster 360;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Duster 360;"></a-sphere>
+              <a-sphere position="0.106007067137809 1.78723404255319 1.28637177192534" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Merc 240D;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Merc 240D;"></a-sphere>
+              <a-sphere position="0.45583038869258 1.58297872340426 1.2556890820762" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Merc 230;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Merc 230;"></a-sphere>
+              <a-sphere position="0.752650176678445 1.12340425531915 1.47813858348249" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Merc 280;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Merc 280;"></a-sphere>
+              <a-sphere position="0.752650176678445 0.94468085106383 1.47813858348249" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Merc 280C;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Merc 280C;"></a-sphere>
+              <a-sphere position="1.35689045936396 0.76595744680851 1.96139094860649" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Merc 450SE;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Merc 450SE;"></a-sphere>
+              <a-sphere position="1.35689045936396 0.880851063829787 1.70058808488878" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Merc 450SL;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Merc 450SL;"></a-sphere>
+              <a-sphere position="1.35689045936396 0.612765957446808 1.7389414472002" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Merc 450SLC;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Merc 450SLC;"></a-sphere>
+              <a-sphere position="1.62190812720848 0 2.86653029915623" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Cadillac Fleetwood;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Cadillac Fleetwood;"></a-sphere>
+              <a-sphere position="1.72791519434629 0 3" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Lincoln Continental;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Lincoln Continental;"></a-sphere>
+              <a-sphere position="1.886925795053 0.548936170212766 2.93940168754794" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Chrysler Imperial;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Chrysler Imperial;"></a-sphere>
+              <a-sphere position="0.148409893992933 2.80851063829787 0.526975198159039" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Fiat 128;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Fiat 128;"></a-sphere>
+              <a-sphere position="0 2.5531914893617 0.0782408591153158" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Honda Civic;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Honda Civic;"></a-sphere>
+              <a-sphere position="0.137809187279152 3 0.246995653285605" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Toyota Corolla;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Toyota Corolla;"></a-sphere>
+              <a-sphere position="0.477031802120141 1.41702127659574 0.730248018409614" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Toyota Corona;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Toyota Corona;"></a-sphere>
+              <a-sphere position="1.03886925795053 0.651063829787234 1.53950396318077" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Dodge Challenger;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Dodge Challenger;"></a-sphere>
+              <a-sphere position="1.03886925795053 0.612765957446808 1.47430324725134" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: AMC Javelin;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: AMC Javelin;"></a-sphere>
+              <a-sphere position="2.04593639575972 0.370212765957447 1.78496548197392" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Camaro Z28;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Camaro Z28;"></a-sphere>
+              <a-sphere position="1.30388692579505 1.12340425531915 1.78880081820506" color="#FF0000" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Pontiac Firebird;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Pontiac Firebird;"></a-sphere>
+              <a-sphere position="0.148409893992933 2.15744680851064 0.323702377908463" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Fiat X1-9;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Fiat X1-9;"></a-sphere>
+              <a-sphere position="0.413427561837456 1.99148936170213 0.480951163385324" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Porsche 914-2;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Porsche 914-2;"></a-sphere>
+              <a-sphere position="0.646643109540636 2.5531914893617 0" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Lotus Europa;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Lotus Europa;"></a-sphere>
+              <a-sphere position="2.24734982332155 0.68936170212766 1.27103042700077" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Ford Pantera L;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Ford Pantera L;"></a-sphere>
+              <a-sphere position="1.30388692579505 1.18723404255319 0.964203528509333" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Ferrari Dino;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Ferrari Dino;"></a-sphere>
+              <a-sphere position="3 0.587234042553191 1.5778573254922" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Maserati Bora;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Maserati Bora;"></a-sphere>
+              <a-sphere position="0.604240282685512 1.40425531914894 0.971874200971618" color="#00FFFF" radius="0.1" event-set__click="_event: click; _target: #labelview; visible: true; value: Volvo 142E;" event-set__leave="_event: mouseleave; _target: #labelview; visible: false; value: Volvo 142E;"></a-sphere>
+              <a-entity position="3.3 0 0">
+                <a-text value="0" position="0 0.4 0" rotation="0 0 0" color="#000000" align="right" anchor="right" text="xOffset: 0.4;" geometry="primitive: box; width: 0.2; height: 0.2; depth: 0.2;" material="transparent: false; color: #FF0000;"></a-text>
+                <a-text value="1" position="0 0.8 0" rotation="0 0 0" color="#000000" align="right" anchor="right" text="xOffset: 0.4;" geometry="primitive: box; width: 0.2; height: 0.2; depth: 0.2;" material="transparent: false; color: #00FFFF;"></a-text>
+                <a-text value="mtcars$am" position="0 1.2 0" rotation="0 0 0" color="#000000" align="center" geometry="primitive: box; width: 0.2; height: 0.2; depth: 0.2;" material="transparent: true; opacity: 0;"></a-text>
+              </a-entity>
+            </a-entity>
+            
+
+            <!-- Ground -->
+            <a-grid geometry='height: 10; width: 10' material="repeat: 10 10"></a-grid>
+
+        </a-scene>
+    </body>
+</html>
