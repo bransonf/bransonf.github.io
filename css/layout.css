@@ -22,6 +22,8 @@
   	[The "base.scss" contains basic default element styles
   		(colors, typography, margins & padding).]
 ------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
 html {
   overflow-x: hidden;
 }
@@ -683,7 +685,7 @@ fieldset[disabled] .btn-theme {
   display: block;
   font-size: 13px;
   font-weight: 600;
-  font-family: Hind, sans-serif;
+  font-family: Raleway, sans-serif;
   color: #fff;
   text-transform: uppercase;
   line-height: 55px;
