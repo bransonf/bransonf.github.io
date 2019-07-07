@@ -3,7 +3,7 @@
     <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8"/>
-        <title>Software Development</title>
+        <title>Research</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta content="" name="description"/>
@@ -33,10 +33,6 @@
         
         <!-- Open links in parent windows -->
         <base target="_parent">
-        
-        <!-- GitHub Calendar -->
-        <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
-        <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css">
         
     </head>
     <!-- END HEAD -->
@@ -71,8 +67,8 @@
                         <div class="menu-container">
                             <ul class="nav navbar-nav navbar-nav-right">
                                 <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="../">Home</a></li>
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="../data-viz/">Data-Viz</a></li>
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="../research/">Research</a></li>
+                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="../data-viz/">Data Viz</a></li>
+                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="../dev/">Software</a></li>
                             </ul>
                         </div>
                     </div>
@@ -84,12 +80,12 @@
         <!--========== END HEADER ==========-->
 
         <!--========== SLIDER ==========-->
-        <div class="promo-block parallax-window" data-parallax="scroll" data-image-src="../img/dev_stock.jpg">
+        <div class="promo-block parallax-window" data-parallax="scroll" data-image-src="../img/books.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="promo-block-divider">
-                            <h1 class="promo-block-title">Software <br/> Development</h1>
+                            <h1 class="promo-block-title">Research</h1>
                             <p class="promo-block-text"></p>
                         </div>
                     </div>
@@ -100,92 +96,64 @@
         <!--========== SLIDER ==========-->
 
         <!--========== PAGE LAYOUT ==========-->
-        <!-- Github Calendar -->
-        <div id="gh-calendar" class="bg-color-sky-light">
-            <div class="container content-lg">
-                <div class="row">
-                    <div class="gh_cal">
-                    Loading GithHub Calendar...
+        <div id='research'>
+            <div class='container content-lg'>
+                <div class='row'>
+                    <div class="col-sm-1"><h2>Housing</h2></div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <p>
+                            One core area of my research is into the social influeces of housing on poverty. A strong theorhetical basis informs my investigation into housing as a spatial mechanism in the reproduction of inequality. For most Americans, their home is their greatest assest, that both gains value and promotes intergenerational wealth in most circumstances. However, homeownership has been disproportionately the privledge of white Americans, due to historic policymaking and a culture that believed segregation was the answer to saving property values. Using publicly available home mortgage discolsure act (HMDA) data, I will be analyzing trends in lending among applicants of varying wealth and economic statuses. HMDA data are tremendously large, and still remain largely unharnessed in social, political and economical empirical literature. I am also investigating other sources of novel data such as Zillow's exclusive research data.
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class='row'>
+                    <div class="col-sm-1"><h2>Health</h2></div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <p>
+                          I have long been interested in the social determinants of health, from the incidence of childhood asthma, to the morbidity of diabetes. A large proportion of my public health work has analyzed the spatial variability in certain health outcomes, such as <a href='https://journals.lww.com/stdjournal/fulltext/2019/07000/Presenting_to_the_Emergency_Department_Versus.9.aspx'>presenting to the emergency room rather than clinics</a> and now colleagues and I are investigating methods to produce public facing data to evaluate community health.
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class='row'>
+                    <div class="col-sm-1"><h2>Violence</h2></div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <p>
+                            I am currently developing a comprehensive web application that allows the interactive exploration of crime and violent injury data, alongside key envrionmental attributes. This tool will be used not only by violence prevention experts, but the public will have access to explore the data as well. This development is part of a much larger effort to understand gun violence in the St. Louis region and to develop and evaluate interventions that reduce violence in the region. Following completion and release of the web application, a project evaluating the reduction of crime in relation to blight removal will be conducted. <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5104992/'>Other such efforts</a> have shown promising results.
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class='row'>
+                    <div class="col-sm-1"><h2>Geocoding</h2></div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <p>
+                            Due to a strong background in statistical and geospatial methodology, I am looking to push the empirical understanding of one of the tools used to drive policy and business. Several software developments are making possible the evaluation of geocoding (the process of transforming address data into spatial coordinates) as a technology. There is great paucity in literature detailing the ability to account for error in geocoding, let alone very many resources to conduct this procedure in a free and reproducible manner.
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class='row'>
+                    <div class="col-sm-1"><h2>311 Data</h2></div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <p>
+                            Non-emergency service request data are tremendously abundant, and represent a novel means of analyzing social phenomena in urban areas. Despite this, they remained largely untapped in the empirical literature, and no work has investigated the viability of these data to accurately represent the population. In other words, the motivations for calling can vary for broader social, economic or political reasons. By comparing these data to voter participation and environmental factors, my research will soon broaden our understanding of these data.
+                        </p>
                     </div>
                 </div>
-                <!--// end row -->
+                <div class='row'>
+                    <div class="col-sm-1"><h2>Education</h2></div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <p>
+                            Among my most latent interests is early childhood education. I am currently working on a statewide needs assessment for early childhood education, which includes a significant amount of data processing and map production.
+                        </p>
+                    </div>
+                    
+                </div>
             </div>
-
         </div>
-        <!-- Calendar -->
         
-        <!-- R Package -->
-        <div id="pkg1">
-            <div class="container content-lg">
-                <div class="row">
-                    <div class="col-sm-3 sm-margin-b-30">
-                        
-                        <div class="text-left sm-text-left">
-                            <h2 class="margin-b-0">stlcsb</h2>
-                             <img src="../img/stlcsb_hex.png", width="200px">
-                        
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="margin-b-60" style="padding-left:90px;">
-                            <p>The stlcsb package enables the tidy and reproducible analysis of <a href="https://en.wikipedia.org/wiki/3-1-1">311 data</a> from the City of Saint Louis. It's a crucial element of <a href="">ongoing research</a>. On <a href="https://cran.r-project.org/web/packages/stlcsb/index.html">CRAN</a> and <a href="https://github.com/slu-openGIS/stlcsb">GitHub</a></p>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-                <!--// end row -->
-            </div>
-        </div>
-        <!-- End Pkg -->
-        
-        <!-- R Package -->
-        <div id="viz3" class="bg-color-sky-light">
-            <div class="container content-lg">
-                <div class="row">
-                    <div class="col-sm-3 sm-margin-b-30">
-                        <div class="text-left sm-text-left">
-                            <h2 class="margin-b-0">censusxy</h2>
-                             <img src="../img/censusxy_hex.png", width="200px">
-                        
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="margin-b-60" style="padding-left:90px;">
-                            <p>The censusxy package brings a crucial source of open geocoding to the R community. This package allows for free and virtually unlimited geocoding of addresses in the United States. On <a href="https://github.com/slu-openGIS/censusxy">GitHub</a></p>
-                           
-                        </div>
-                    </div>
-                </div>
-                <!--// end row -->
-            </div>
-
-        </div>
-        <!-- End Pkg -->
-        
-        <!-- R Package -->
-        <div id="viz2">
-            <div class="container content-lg">
-                <div class="row">
-                    <div class="col-sm-3 sm-margin-b-30">
-                        <div class="text-left sm-text-left">
-                            <h2 class="margin-b-0">gateway</h2>
-                             <img src="../img/gateway_hex.png", width="200px">
-                        
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="margin-b-60" style="padding-left:90px;">
-                            <p>The creation of <a href="http://chris-prener.github.io">Christopher Prener, Ph.D.</a>, gateway is the solution to working with the City of St. Louis's open data in R. My contribution is assisting in the creation of a composite geocoder for the St. Louis region. On <a href="https://github.com/slu-openGIS/gateway">GitHub</a></p>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-                <!--// end row -->
-            </div>
-        </div>
-        <!-- End Pkg -->
     
         <!-- Contact -->
         <div id="contact">
@@ -224,9 +192,6 @@
         </div>
         <!-- End Contact -->
         <!--========== END PAGE LAYOUT ==========-->
-        
-        <!-- GitHub Calendar -->
-        <script>GitHubCalendar(".gh_cal", "bransonf", { responsive: true }); </script>
 
         <!-- Back To Top -->
         <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
