@@ -1,24 +1,4 @@
-# Lazy or Useless Functions in R
-
-# Load all of the Libraries in a Vector
-libs <- function(pkgs){
-  for (i in pkgs) {
-    eval(parse(text = paste0('library(',i,')')))
-  }
-}
-
-# Preview Data Row by Row Interactively
-row_by_row <- function(dataframe){
-  i = 0
-  while(i <= nrow(dataframe)){
-    i = i + 1
-    rl = readline('Next?')
-    if(nchar(rl) > 0){
-      break
-    }
-    print(dataframe[i,])
-  }
-}
+# My Custom R functions//
 
 # Add Strings together
 `%+%` <- function(lhs, rhs){
