@@ -1,22 +1,7 @@
-# My Custom R functions//
+# Custom Function for Encryption
 
-# Add Strings together
-`%+%` <- function(lhs, rhs){
-  paste0(lhs, rhs)
-}
-
-# Remove from String
-`%-%` <- function(lhs, rhs){
-  stringr::str_remove(lhs, rhs)
-}
-
-# Test for Not-In-Ness
-`%nin%` <- function(lhs, rhs){
-  !lhs %in% rhs
-}
-
-# Password Protected YAML (Interactive)
-encrypt_yaml <- function(file){
+# Password Protect File
+encrypt_file <- function(file){
   pwd <- getPass::getPass('Password:\n')
   k <- sodium::sha256(charToRaw(pwd))
   key <- cyphr::key_sodium(k)
@@ -33,4 +18,11 @@ decrypt_yaml <- function(file){
   return(yaml::read_yaml(text = rawToChar(content)))
 }
 
-
+# Read Encrypted CSV (Interactive)
+decrypt_csv <- function(file){
+  pwd <- getPass::getPass('Password:\n')
+  k <- sodium::sha256(charToRaw(pwd))
+  key <- cyphr::key_sodium(k)
+  content <- cyphr::decrypt_file(file, key)
+  return(readr::read_csv(file = rawToChar(content)))
+}
