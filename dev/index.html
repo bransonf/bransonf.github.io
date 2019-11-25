@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="author" content="Branson Fox">
+    <meta name="description" content="Branson Fox - Software Development">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS Imports -->
+<link rel="stylesheet" href="css/grid.css">
+</head>
+<body>
+I build data pipelines.
+
+Let's look at one example of a real problem that I addressed by building an automated data pipeline,
+
+Public Crime Data in the city of St. Louis is distributed as monthly spreadsheets. It is difficult to download over a hundred of these files, especially given that they require javascript calls, making scraping more difficult. Regardless, the first step is to scrape all of these spreadsheets using a headless browser, and then storing the files in a temporary directory. From there, we read and standardize the data. Then, we put it into a relational database. And from that relational database, we provide a REST API for controlling and simplifiying client queries.
+There is still one problem we want to address, and that is automating the process. In order to do that, we create a cron job that runs once daily, since we never know what day of the month data will be uploaded. This cron job checks if new data is available, and if it is, it attempts to scrape and add this data to the database. Whether it is successful or errors due to an unforseen circumstance, the administrator (me) receives either an SMS or email notification.
+This API currently powers the crime dashboard, monthly report generation, and simple data downloads, all resources that I developed as well.
+As you can see, this simple pipeline greatly increases the availability and accessibility of important data to the general public.
+The number of individuals able to access or observe the location of crimes within the city is greatly increased, using technology to bring power to the people.
+</body>
+</html>

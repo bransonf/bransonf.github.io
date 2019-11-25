@@ -1,0 +1,10 @@
+/* Page Styling */
+
+#about {
+    height: 500px;
+    background-color: rgb(12, 12, 12);
+}
+
+#about p {
+    color: white;
+}
