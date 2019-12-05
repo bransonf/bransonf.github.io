@@ -18,9 +18,11 @@ decrypt_yaml <- function(file){
   return(yaml::read_yaml(text = rawToChar(content)))
 }
 
-# Read Encrypted CSV (Interactive)
-decrypt_csv <- function(file){
-  pwd <- getPass::getPass('Password:\n')
+# Read Encrypted CSV
+decrypt_csv <- function(file, pwd =''){
+  if (pwd == '') {
+    pwd <- getPass::getPass('Password:\n')
+  }
   k <- sodium::sha256(charToRaw(pwd))
   key <- cyphr::key_sodium(k)
   content <- cyphr::decrypt_file(file, key)
