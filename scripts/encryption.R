@@ -9,9 +9,11 @@ encrypt_file <- function(file){
   file.remove(file)
 }
 
-# Read Encrypted YAML (Interactive)
-decrypt_yaml <- function(file){
-  pwd <- getPass::getPass('Password:\n')
+# Read Encrypted YAML
+decrypt_yaml <- function(file, pwd=''){
+  if (pwd == '') {
+    pwd <- getPass::getPass('Password:\n')
+  }
   k <- sodium::sha256(charToRaw(pwd))
   key <- cyphr::key_sodium(k)
   content <- cyphr::decrypt_file(file, key)
