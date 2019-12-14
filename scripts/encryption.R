@@ -1,8 +1,10 @@
 # Custom Function for Encryption
 
 # Password Protect File
-encrypt_file <- function(file){
-  pwd <- getPass::getPass('Password:\n')
+encrypt_file <- function(file, pwd=''){
+  if (pwd == '') {
+    pwd <- getPass::getPass('Password:\n')
+  }
   k <- sodium::sha256(charToRaw(pwd))
   key <- cyphr::key_sodium(k)
   cyphr::encrypt_file(file, key, dest = paste0(file, '.encrypted'))
