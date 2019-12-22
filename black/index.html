@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Black Screen</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        #black {
+            background-color: #000000;
+            margin: 0;
+            width: 100%;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+
+        #black.fs {
+            color: #000000;
+        }
+
+
+        h1, h2 {
+            padding: 30px 0 0 0;
+            margin: 0;
+            text-align: center;
+        }
+    
+    </style>
+    <script>
+        // Open Method
+        function openFullscreen() {
+            var elem = document.getElementById('black');
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                elem.msRequestFullscreen();
+            }
+        }
+
+        // Close Method
+        function closeFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) { /* Firefox */
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE/Edge */
+                document.msExitFullscreen();
+            }
+        }
+
+        
+        function fullscreen() {
+            var black = document.getElementById('black');
+            if(black.classList.contains('fs')){
+                closeFullscreen()
+                black.classList.remove('fs')
+            }else{
+                openFullscreen()
+                black.classList.add('fs')
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div id="black" onClick="fullscreen()">
+        <h1>Click Anywhere to Enter Fullscreen</h1>
+        <h2>This page is meant for making an active monitor fully black</h2>
+    </div>
+</body>
+</html>
