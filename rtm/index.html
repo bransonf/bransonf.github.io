@@ -13,6 +13,17 @@
 </head>
 <body>
 <style>
+/* Define Color Scale for Legend Use*/
+:root {
+    --col1: rgb(0, 0, 4);
+    --col2: rgb(35, 17, 81);
+    --col3: rgb(95, 24, 127);
+    --col4: rgb(152, 45, 128);
+    --col5: rgb(211, 67, 110);
+    --col6: rgb(248, 118, 92);
+    --col7: rgb(254, 186, 128);
+    --col8: rgb(252, 253, 191);
+}
 #menu {
     background: #fff;
     position: absolute;
@@ -72,17 +83,26 @@
 
         map.addSource('homicide', {
             type: 'vector',
-            url: 'mapbox://bransonf.60c3q8pp'
+            url: 'mapbox://bransonf.869bxnty'
         });
         map.addLayer({
             'id': 'Homicide',
             'type': 'fill',
             'source': 'homicide',
-            'source-layer': 'Homicide1819_T',
+            'source-layer': 'homicideRTM',
             "paint": {
                 "fill-color": {
-                    property: 'risk_score',
-                    stops: [[17.97, 'rgb(96,0,0)'], [647.39, 'rgb(249,0,0)']]
+                    property: 'rrs',
+                    stops: [
+                        [1, 'rgba(0, 0, 4, 0.7)'],
+                        [5, 'rgba(35, 17, 81, 0.75)'],
+                        [10, 'rgba(95, 24, 127, 0.75)'],
+                        [25, 'rgba(152, 45, 128, 0.8)'],
+                        [50, 'rgba(211, 67, 110, 0.8)'],
+                        [100, 'rgba(248, 118, 92, 0.85)'],
+                        [250, 'rgba(254, 186, 128, 0.85)'],
+                        [500, 'rgba(252, 253, 191, 0.9)']
+                    ]
                 },
                 "fill-opacity": 0.8
             }
@@ -91,17 +111,26 @@
 
         map.addSource('assault', {
             type: 'vector',
-            url: 'mapbox://bransonf.36c17725'
+            url: 'mapbox://bransonf.6xlf02ai'
         });
         map.addLayer({
             'id': 'Assault',
             'type': 'fill',
             'source': 'assault',
-            'source-layer': 'Assault1819_T',
+            'source-layer': 'assaultRTM',
             "paint": {
                 "fill-color": {
-                    property: 'risk_score',
-                    stops: [[5.97, 'rgb(96,0,0)'], [295.29, 'rgb(249,0,0)']]
+                    property: 'rrs',
+                    stops: [
+                        [1, 'rgba(0, 0, 4, 0.7)'],
+                        [5, 'rgba(35, 17, 81, 0.75)'],
+                        [10, 'rgba(95, 24, 127, 0.75)'],
+                        [15, 'rgba(152, 45, 128, 0.8)'],
+                        [25, 'rgba(211, 67, 110, 0.8)'],
+                        [50, 'rgba(248, 118, 92, 0.85)'],
+                        [100, 'rgba(254, 186, 128, 0.85)'],
+                        [200, 'rgba(252, 253, 191, 0.9)']
+                    ]
                 },
                 "fill-opacity": 0.8
             }
@@ -109,22 +138,32 @@
         });
         map.addSource('nondom', {
             type: 'vector',
-            url: 'mapbox://bransonf.3wu9lglm'
+            url: 'mapbox://bransonf.am6y8jhj'
         });
         map.addLayer({
             'id': 'Non-Domestic',
             'type': 'fill',
             'source': 'nondom',
-            'source-layer': 'NDA1819_T',
+            'source-layer': 'nonDomesticRTM',
             "paint": {
                 "fill-color": {
-                    property: 'risk_score',
-                    stops: [[6.2, 'rgb(96,0,0)'], [634.47, 'rgb(249,0,0)']]
+                    property: 'rrs',
+                    stops: [
+                        [1, 'rgba(0, 0, 4, 0.7)'],
+                        [5, 'rgba(35, 17, 81, 0.75)'],
+                        [10, 'rgba(95, 24, 127, 0.75)'],
+                        [25, 'rgba(152, 45, 128, 0.8)'],
+                        [50, 'rgba(211, 67, 110, 0.8)'],
+                        [100, 'rgba(248, 118, 92, 0.85)'],
+                        [250, 'rgba(254, 186, 128, 0.85)'],
+                        [500, 'rgba(252, 253, 191, 0.9)']
+                    ]
                 },
                 "fill-opacity": 0.8
             }
-
         });
+
+
     });
     
     var toggleableLayerIds = ['Homicide', 'Assault', 'Non-Domestic'];
