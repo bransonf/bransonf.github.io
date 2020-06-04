@@ -1,0 +1,114 @@
+h1 {
+    position: absolute;
+    top: 220px;
+}
+
+#hero {
+    background-color: #F8F8F8;
+    overflow: hidden;
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+#hero svg {
+    padding: 20px;
+}
+
+#about {
+    min-height: 500px;
+    background-color: var(--gray);
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+#contributions {
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+.container h2 {
+    padding-top: 20px;
+}
+
+#ghubcal {
+    padding: 30px;
+}
+
+/* Skill Cards */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+    margin: 30px;
+}
+
+.card {
+    height: 200px;
+    width: 80%;
+    border: 1px solid gray;
+    font-size: 20px;
+    text-align: center;
+    background-color: #F3F8F9;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px var(--dark-gray);
+    font-weight: 700;
+    padding: 30px;
+}
+
+.card svg {
+    position: relative;
+    margin: 50px;
+    transform: scale(3);
+    transition: 300ms;
+}
+
+.card:hover svg {
+    transform: scale(4);
+    transition: 300ms;
+    fill: var(--blue);
+}
+
+#packages {
+    border-bottom: 1px solid var(--dark-gray);
+    min-height: 500px;
+}
+
+#packages img {
+    width: 50%;
+    float:left;
+}
+
+#packages p {
+    margin-top: 100px;
+}
+
+#other {
+    background-color: var(--gray);
+    min-height: 200px;
+}
+
+#other p {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Media Queries */
+@media screen and (max-width:960px){
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:630px){
+    .cards {
+        grid-template-columns: 1fr;
+        margin: 50px;
+    }
+}
+
+@media screen and (max-width:400px){
+    h1 {
+        font-size: 3.5rem;
+    }
+    .cards {
+        margin: 10px;
+    }
+}
