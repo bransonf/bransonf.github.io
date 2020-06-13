@@ -107,3 +107,10 @@ p {
         top: 50px;
     }
 }
+
+@media screen and (min-width: 1060px){
+    iframe {
+        width: 100%;
+        margin-left: 0%;
+    }
+}
