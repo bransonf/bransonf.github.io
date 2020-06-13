@@ -91,6 +91,16 @@ code {
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: linear-gradient(left, #96A6BF, #63738C);
+    background: linear-gradient(left, rgb(150, 166, 191), rgb(99, 115, 140));
+    box-shadow: inset 0 0 1px 1px #5C6670;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(117, 129, 148);
+    box-shadow: inset 0 0 1px 1px #5C6670;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgb(99, 109, 126);
     box-shadow: inset 0 0 1px 1px #5C6670;
 }
