@@ -46,7 +46,7 @@ h1 {
     border: 1px solid gray;
     font-size: 20px;
     text-align: center;
-    background-color: #F3F8F9;
+    background: linear-gradient(25deg, #F3F8F9, #ffffff);
     border-radius: 5px;
     box-shadow: 3px 3px 5px var(--dark-gray);
     font-weight: 700;
