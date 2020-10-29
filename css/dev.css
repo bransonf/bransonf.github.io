@@ -15,7 +15,7 @@ h1 {
 
 #about {
     min-height: 500px;
-    background-color: var(--gray);
+    background-color: var(--white);
     border-bottom: 1px solid var(--dark-gray);
 }
 
@@ -25,10 +25,6 @@ h1 {
 
 .container h2 {
     padding-top: 20px;
-}
-
-#ghubcal {
-    padding: 30px;
 }
 
 /* Skill Cards */
@@ -67,6 +63,7 @@ h1 {
 }
 
 #packages {
+    background-color: var(--gray);
     border-bottom: 1px solid var(--dark-gray);
     min-height: 500px;
 }
@@ -81,7 +78,7 @@ h1 {
 }
 
 #other {
-    background-color: var(--gray);
+    background-color: var(--white);
     min-height: 200px;
 }
 
