@@ -18,6 +18,21 @@
 
 </head>
 <body>
+    <div id="announcement" style="visibility: hidden;">
+        <h2>I'm Joining NCX!</h2>
+        <p>
+            After a challenging few years in public health, it's time for me to take on my next global threat: <b>climate change</b>.
+        </p>
+        <p>
+            I'm joining the engineering team at <a href="https://ncx.com" style="text-decoration: underline;">NCX</a>, a rapid-growing climate change startup democratizing carbon capture and conservation.
+        </p>
+        <p>
+            This site will undergo major renovation in the following months. If you know me from my WUSTL affiliation, please direct new email to the address below.
+        </p>
+        <div id="announcement-close" onclick="closeAnnouncement();">
+            <i data-eva="close-outline"></i></a>
+        </div>
+    </div>
     <div id="hero">
         <div id="nav">
             <div class="container">
@@ -86,9 +101,42 @@
             <button id="emailButton" onclick="location.href='mailto:hey@bransonf.com';">hey@bransonf.com</button>
         </div>
     </div>
+    <div id="announcement-overlay" style="visibility: hidden;"></div>
     <script src="https://unpkg.com/eva-icons"></script>
     <script>
-        eva.replace()
+        eva.replace();
+        closeAnnouncement = function(){
+            document.getElementById('announcement').remove()
+            document.getElementById('announcement-overlay').remove()
+            setCookie('readAnnouncement', true, 30)
+        };
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            let expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";SameSite=None; Secure" + ";path=/";
+        };
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        };
+        if(getCookie('readAnnouncement') == 'true'){
+            closeAnnouncement();
+        }else{
+            document.getElementById('announcement').style.visibility = 'visible';
+            document.getElementById('announcement-overlay').style.visibility = 'visible';
+        };
     </script>
 </body>
 </html>
