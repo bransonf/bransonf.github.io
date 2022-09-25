@@ -1,0 +1,116 @@
+h1 {
+    position: absolute;
+    top: 220px;
+    color: var(--white);
+}
+
+h2 {
+    padding: 20px;
+}
+
+iframe {
+    width: 85%;
+    margin-left: 7.5%;
+}
+
+#hero {
+    background-image: url('../img/books.jpg');
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-color: var(--gray);
+    height: 500px;
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+p {
+    padding: 15px;
+}
+
+.container img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#nav a {
+    color: var(--white);
+}
+
+#econ {
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+#vacancy {
+    background-color: var(--gray);
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+#vacancy img {
+    box-shadow: 2px 2px 4px rgb(68, 68, 68);
+}
+
+#urban {
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+#urban iframe {
+    height: 500px;
+    box-shadow: 1px 2px 4px rgb(68, 68, 68);
+    margin-bottom: 40px;
+}
+
+#urban a {
+    color: var(--blue);
+}
+
+#crime {
+    background-color: var(--gray);
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+#crime img {
+    box-shadow: 2px 2px 4px rgb(68, 68, 68);
+}
+
+#crime iframe {
+    height: 500px;
+    box-shadow: 1px 2px 4px rgb(68, 68, 68);
+    margin-bottom: 40px;
+}
+
+#crime a {
+    color: var(--blue);
+}
+
+#spatial {
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+#std {
+    background-color: var(--gray);
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+@media screen and (max-width: 750px){
+    #hero {
+        height: 300px;
+    }
+    h1 {
+        top: 125px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    #hero {
+        height: 200px;
+    }
+    h1 {
+        top: 50px;
+    }
+}
+
+@media screen and (min-width: 1060px){
+    iframe {
+        width: 100%;
+        margin-left: 0%;
+    }
+}

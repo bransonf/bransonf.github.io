@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --white: #ffffff;
+    --gray: #F8F8F8;
+    --dark-gray: rgb(233, 233, 233); /*#393939;*/
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    height: 250vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Nameplate */
+.nameplate-container {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    background-color: #ffffff;
+    height: 40vh;
+    width: 100%;
+}
+
+#nameplate-svg-square {
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%
+}
+
+/* info card generic */
+.infocard-container {
+    position: absolute;
+    top: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* arrow */
+.arrow-container {
+    position: absolute;
+    height: 50vh;
+    top: 50vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: end;
+}
+
+#arrow-card {
+    background-color: #ffffff;
+    outline: none;
+    transform: none;
+    transition: none;
+}
+
+#down-arrow-svg {
+    position: absolute;
+    left:50%;
+    top:50%;
+    width:50%;
+    height:50%;
+    transform: translateX(-50%);
+}
+
+/* generic */
+.infocard {
+    width: 24vw;
+    min-width: 500px;
+    background-color: #333333;
+    outline: 2px solid black;
+    margin: 50px;
+    text-align: center;
+    color: white;
+    min-height: 20vh;
+    padding: 20px;
+    transition: 200ms;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.infocard:hover {
+    transform: scale(125%);
+    transition: 200ms;
+}
+
+.infocard li {
+    text-align: left;
+}
+/* archive */
+#archive-card {
+    background-color: #ffffff;
+    color: black;
+}
+
+#archive-card:hover {
+    cursor: pointer;
+}
+
+#archive-arrow {
+    transform: rotate(270deg) scale(50%);
+}
+
+
+@media screen and (max-width: 900px) {
+    .infocard {
+        min-width: 360px;
+    }
+    :root {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .infocard {
+        min-width: 260px;
+        min-height: 15vh;
+    }
+    :root {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 420px) {
+    .infocard {
+        min-width: 200px;
+    }
+    :root {
+        font-size: 12px;
+    }
+}

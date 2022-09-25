@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+  <title>Leaflet Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+  
+ <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
+
+</head>
+
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+  #map {
+  	border: 1px solid black;
+    width: 75vw;
+    height: 50vh;
+  }
+</style>
+
+<h1>E-Sports Events</h1>
+<div id="map"></div>
+  <div id="print-events"></div>
+    
+<script>
+
+  var events = [
+            [
+                'SLU Smash Biweekly Tournament', 'Wednesday, May 1', '6pm-11:30pm', '3700 Lindell Blvd, St. Louis, MO, 63108'
+            ],
+            [
+                'FIFA Friday once weekly', 'Friday, April 26', '7pm-10pm', '6035 Peachtree Road Suite C-220, Atlanta, Georgia 20260'
+            ],
+            [
+                'Bourbon State Gaming: Barrel Bash IV', 'Saturday, May 11', '10am-10pm', '6505 Bethany Ln, Louisville, Kentucky 40272'
+            ],
+            [
+                'Rocket League Thursday', 'Thursday, April 25', '6pm-10pm', '401 E Broadway, Bloomington, Minnesota 55425'
+            ],
+            [
+                'GameWorks presents: Weekend Warmup Smash Ultimate Weekly', 'Friday, April 26', '5pm-11pm', '401 E Broadway, Bloomington, Minnesota 55425'
+            ],
+            [
+                'Collector Store Smashfest', 'Friday, April 26', '5:30pm-10pm', '1106 Jungs Station Road, Saint Peters, Missouri 63376'
+            ],
+            [
+                'Collector Store Smashfest', 'Friday, May 10', '5:30-10pm', '1106 Jungs Station Road, Saint Peters, Missouri 63376'
+            ],
+            [
+                'Collector Store Smashfest', 'Friday, May 24', '5:30-10pm', '1106 Jungs Station Road, Saint Peters, Missouri 63376'
+            ],
+            ['Master Mines #2', 'Saturday, April 20', '9am-11pm', '1345 N Bishop Ave, Rolla, MO 65401']
+        ];
+  
+// Define Pin
+    var pin = L.icon({
+    iconUrl: 'pin.png',
+
+    iconSize:     [22, 41], // size of the icon
+    iconAnchor:   [11, 41], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -41] // point from which the popup should open relative to the iconAnchor
+});
+    
+// And, let see the console window at the bottom
+var mymap = L.map('map').setView([38.6270, -90.1994], 4);
+  L.tileLayer('http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+    maxZoom: 18
+}).addTo(mymap);
+    
+  var lats = [38.63766, 33.9077, 38.10212, 44.95511, 44.85511, 38.74402, 38.74402, 38.74402, 37.95501],
+      lons = [-90.23698, -84.28803, -85.88645, -90.56195, -90.56195, -90.56195, -90.56195, -90.56195, -91.7771],
+      markers = [];
+    
+  for(var i = 0; i < lats.length; i++){
+     markers[i] = L.marker([lats[i], lons[i]], {icon: pin}).addTo(mymap);
+     markers[i].bindPopup("<b>Name: </b>" + events[i][0] + "<br>" +
+                          "<b>Date: </b>" + events[i][1] + "<br>" +
+                          "<b>Time: </b>" + events[i][2] + "<br>" +
+                          "<b>Address: </b>" + events[i][3]);
+  }
+    
+
+  
+    
+  // Idk what this does...
+   // mymap.on('click', onMapClick);
+    
+</script>
+</html>
