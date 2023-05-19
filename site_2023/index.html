@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branson Fox</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+
+</head>
+<body>
+    <div id="hero">
+        <div class="container">
+            <div id="nameBlock">
+                <h1>Branson Fox</h1>
+                <h2>Data and Software Developer</h2>
+            </div>
+            <div id="navBlock">
+                <h3><a href="./cv/" class="ul-rtl">CV</a></h3>
+                <h3><a href="./portfolio/" class="ul-rtl">Portfolio</a></h3>
+                <h3><a href="./research/" class="ul-rtl">Research</a></h3>
+                <!-- <h3><a href="./writing/" class="ul-rtl">Writing</a></h3> -->
+            </div>
+        </div>
+    </div>
+    <div class="content-box container">
+        <div id="logoBox">
+            <img src="img/NCX-logo.png" alt="NCX Logo">
+            <img src="img/RDA-logo.png" alt="RDA Logo">
+            <img src="img/WUSM-logo.png" alt="WUSM Logo">
+        </div>
+        <br>
+        <p>
+            I'm Branson Fox, a seasoned developer with wide-ranging expertise in data science and engineering.
+            I've addressed socially-driven problems at scale in public health and infectious disease at Washington University School of Medicine in St. Louis (WUSM) and built foundational data infrastructure at the St. Louis Regional Data Alliance (RDA) and the Natual Capital Exchange (NCX). 
+        </p>
+    </div>
+    <div class="content-box container">
+        <h2>Portfolio and Projects</h2>
+        <div class="grid-container">
+
+            <div class="text-content-box">
+                <p>
+                    I have worked on a number of impactful things, from directly advising public health agencies with COVID-19 hospitalization projections, quantifying risk of violent crime in the city of St. Louis, and optimizing a large scale carbon crediting pipeline.
+                </p>
+                <br>
+                See my full Portfolio ->
+            </div>
+            <div class="slideshow-container">
+                <div class="img-content-box" id="currentImageBox" data-index=0>
+                    <img id="currentImage" src="img/slideshow/all_us_buildings.jpg" alt="All Buildings in the US" >
+                </div>
+                <p id="slideshow-caption">All Building Footprints in the United States</p>
+                <a onclick=changeSlide(-1)><-</a>
+                <a onclick=toggleShow(0)>-</a>
+                <a onclick=changeSlide(1)>-></a>
+            </div>
+        </div>
+    </div>
+    <div class="content-box container">
+        <h2>Research and Innovation</h2>
+        <div class="grid-container">
+            <div class="img-content-box">
+                <img src="img/journal_stack.png" alt="Academic Journal Headers">
+            </div>
+            <div class="text-content-box">
+                <p>
+                    I am an expert in spatial data, having developed a number of novel interpolation methods, open source utilities and robust methods for handling spatial data at continental scale.
+                    
+                    In addition, I have a modest academic record, having published a number of impactful articles pertaining to public health.
+                </p>
+                <br>
+                See all my reseach ->
+                <br>
+                [icon] Google Scholar
+            </div>
+        </div>
+        
+
+    </div>
+    <!-- <div class="content-box container">
+        <h2>Selected Writing</h2>
+
+        <ul>
+            <li>Architecting a Personal Cloud</li>
+            <li>Spatial Indexing at Scale</li>
+            <li>On Novel Applications of Polyominoes</li>
+            <li>An Open Stack for Open Data</li>
+            <li>The Infamous Chicken Sandwich Powerpoint</li>
+        </ul>
+
+    </div> -->
+    <div class="content-box-short container">
+        <div class="grid-container">    
+            <h3>Curriculum Vitae</h3>
+            <h3>LinkedIn</h3>
+            <h3>Github</h3>
+            <h3>Email</h3>
+        </div>
+
+
+    </div>
+    <div id="footer">
+        <div class="container">
+            <p>Branson Fox - St. Louis - 2023</p>
+            <p><a href="/archive">Explore the Archive -></a></p>
+        </div>
+    </div>
+    <script src="js/home.js"></script>
+</body>
+</html>
