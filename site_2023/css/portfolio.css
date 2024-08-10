@@ -1,5 +1,24 @@
+#hero {
+    height: 150px;
+    /* width: 100%; */
+    background-color: var(--gray);
+    padding: 50px;
+    border-bottom: 1px solid var(--dark-gray);
+}
+
 #navContent {
     position: absolute;
-    top: 200px;
-    left: 100px; /* TODO: Media query left -100 when width > 960*/
+    left: 50px; /* TODO: Media query left -100 when width > 960*/
+    max-width: 300px;
+}
+
+#navContent h3.active {
+    color: var(--blue);
+}
+
+#navBlock {
+    position: relative;
+    text-align: right;
+    right: 100px;
+    top: -100px
 }

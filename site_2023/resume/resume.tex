@@ -1,0 +1,236 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Branson Fox}\\[7.5pt]
+\href{https://github.com/bransonf}{\raisebox{-0.05\height}\faGithub\ bransonf} \ $|$ \ 
+\href{https://linkedin.com/in/bransonf}{\raisebox{-0.05\height}\faLinkedin\ bransonf} \ $|$ \ 
+\href{https://bransonf.com}{\raisebox{-0.05\height}\faGlobe \ bransonf.com} \ $|$ \ 
+\href{mailto:bransonfox.bf@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ bransonfox.bf@gmail.com}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+
+Experienced data engineer with expertise in GIS, statistics and building big data systems.
+
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Data Engineer} & \hfill Mar 2022 - Present \\[3.75pt]
+NCX (Natural Capital Exchange) \\ [5pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+            \item[--] Built several spatial data pipelines to assess all land in CONUS for forestry development
+            \item[--] Worked closely with data scientists to scale Bayesian pipeline to compute carbon credits
+            \item[--] Lead experimentation to benchmark models and develop new products
+    \end{itemize}
+        \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Senior Statistical Data Analyst} & \hfill Sep 2020 - Mar 2022 \\[3.75pt]
+Washington University School of Medicine - Division of Infectious Diseases \\ [5pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Maintained Bayesian model to project COVID-19 hospitalizations statewide
+        \item[--] Learned and applied epidemiological modeling techniques
+        \item[--] Directly advised state, local and private health agencies
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Lead Data Engineer} & \hfill Jun 2020 - Jan 2023 \\[3.75pt]
+Regional Data Alliance @ University of Missouri St. Louis \\ [5pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+            \item[--] Built pipeline to scrape, catalog and distribute regional public datasets
+            \item[--] Managed ongoing rotation of consultants
+    \end{itemize}
+        \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Data Scientist} & \hfill Dec 2018 - Sep 2020 \\[3.75pt]
+Washington University School of Medicine - Institute for Public Health \\ [5pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+            \item[--] Implemented private geospatial infrastructure for analysis of sensitive data
+            \item[--] Developed novel methods of spatial interpolation
+            \item[--] Published research on property vacancy and crime
+    \end{itemize}
+\end{minipage}
+}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+
+\textbf{Saint Louis University} & \hfill 2016 - 2020 \\
+B.A. - Sociology and Demography \\
+Minor - Computational Geospatial Science \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% PROJECTS
+%----------------------------------------------------------------------------------------
+% \section{Projects}
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+% \end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+
+I have published some modest findings in infectious diseases, public health and methods in GIS. See \href{https://bransonf.com/scholar}{bransonf.com/scholar} for an up-to-date list.
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Core Technologies}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+% General & \normalsize{ETL, Cloud Architecture, Data Modeling, Distributed Compute, GIS, Statistics} \\
+Languages &  \normalsize{Python, R, SQL (Postgres, PostGIS, Spark, BigQuery), Javascript, Scala, Bash, Git}\\
+Libraries & \normalsize{Docker (Compose, Kubernetes), AWS (CDK, Cloudformation), Airflow, GDAL, Databricks (Spark, MLFlow), Terraform, Metaflow, Sentry} \\
+Python & \normalsize{Jupyter, FastAPI, Celery, Pandas, Shapely, Numpy, Xarray, Dask}
+% Libraries  &  \normalsize{Docker, Airflow, GDAL, PostGIS, FastAPI, Celery, AWS CDK, Hadoop, R Shiny, Tidyverse, Stan, Sentry, Jupyter, Metaflow, MLFlow, Django, Shapely, Pandas, Xarray, Dask}\\
+% Other & \normalsize{Metabase, Tableau, Esri Suite, QGIS, Airtable, Figma, Hubspot, XCP-ng}
+% Python & \normalsize{, }
+\end{tabularx}
+
+
+\end{document}

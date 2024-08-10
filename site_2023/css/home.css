@@ -147,10 +147,12 @@
 
 #scholarLink a {
     color: var(--black);
+    transition: 400ms;
 }
 #scholarLink a:hover {
     color: var(--blue);
     fill: var(--blue);
+    transition: 400ms;
 }
 
 #scholarLink a svg {

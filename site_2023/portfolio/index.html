@@ -12,47 +12,73 @@
 </head>
 <body>
     <div id="hero">
-
+        <div class="container">
+            <h1>Portfolio</h1>
+            <h3>An (almost) comprehensive list of things I've built</h3>
+            <div id="navBlock">
+                <h3><a href="../" class="ul-rtl">Home</a></h3>
+            </div>
+        </div>
     </div>
-    <div id="navContent" class="container">
-
-        <h3>NCX</h3>
+    <div id="navContent" class="container" style="top: 250px;">
+        <h3><a href="#ncx">NCX</a></h3>
         <ul>
-            <li>CONUS DB</li>
+            <li>Land Explorer App</li>
+            <li>Land Assessment Platform NCAPI</li>
+            <li>CONUSDB</li>
             <li>Raster Interpolation at Scale</li>
             <li>Parcel Ownership Reconciliation</li>
+            <li>Automated Docker Lifecycle</li>
+            <li>Crediting/Methodology/Audit</li>
+            <li>Data Warehouse</li>
+            <li>Benchmarking Platform</li>
             <li>Mill Pressure Isochrones</li>
             <li>Timber Price Scrapers</li>
         </ul>
-        <h3>Regional Data Alliance</h3>
+        <h3><a href="#rda">Regional Data Alliance</a></h3>
         <ul>
             <li>Regional Data Exchange</li>
             <li>Open Data Commons</li>
-            Codeveloped with Nico Stranquist
-            https://www.nicostranquist.com
             <li>RDA Member Directory and Forum</li>
             <li>St. Louis Vacancy Portal</li>
             <li>An Open Stack for Open Data</li>
+            <li>Regional Data APIs</li>
+            <li>Essential Worker Analysis</li>
+            <li>REDB</li>
         </ul>
-        <h3>Washington University School of Medicine</h3>
+        <h3><a href="#wusm">Washington University School of Medicine</a></h3>
         <ul>
+            <li>Statistical Measures of Equity</li>
             <li>Projecting COVID-19 hospitalizations</li>
             <li>Vaccine Distribution</li>
             <li>Statistical Measures of Equality</li>
             <li>Bibliometric Network Analysis</li>
             <li>Spatial Correlates of Violent Crime</li>
             fix /rtm link in archive page of bransonf.com
+            <li>Private Geospatial Infrastructure</li>
             <li>STL Crime Dashboard</li>
             <li>LIVE Dashboard</li>
             <li>Center Initiative Tracker</li>
             <li>Access to Care Analyses</li>
+            <li>Contact Tracing App</li>
+            <li>HL7 Parser</li>
+        </ul>
+        <h3><a href="#slu">Saint Louis University</a></h3>
+        <ul>
+            <li>Testing sensitivity to MAUP with Polyominoes</li>
+            <li>censusxy R package</li>
+            <li>Building an Open Source Geocoder</li>
+            <li>areal R package</li>
+            <li>Scooter Distribution</li>
+            <li>Creating a Definition of Vacancy</li>
+            <li>Detours - Barriers to Emergency Response</li>
         </ul>
         <!-- <h3>Stealth Startup</h3>
         <ul>
             <li>Site Selection at Scale</li>
         </ul> -->
 
-        <h3>Spatial Data Engineering</h3>
+        <!-- <h3>Spatial Data Engineering</h3>
         <ul>
             <li>Spatial Data at Scale</li>
             <li>Spatial Interpolation</li>
@@ -69,22 +95,61 @@
             <li>Homeownership</li>
             <li>Civic Engagement</li>
             <li>Estimating Vacancy</li>
-        </ul>
-        <h3>Technical Proficiencies</h3>
+        </ul> -->
+        <h3><a href="#gtp">General Technical Proficiencies</a></h3>
     </div>
 
-
-    <div class="content-box">
+    <div id="ncx" class="content-box container section">
+        <h2>Natural Capital Exchange (NCX)</h2>
 
     </div>
+    <div id="rda" class="content-box container section">
+        <h2>St. Louis Regional Data Alliance</h2>
 
-    <div class="content-box">
-        <h2>Technical Proficiencies</h2>
+        <h3>Open Data Commons</h3>
+        <p>
+            Data is powerful, but only in the hands of the right people. APIs are a powerful way for programmers to access data in an organized way, but for less technically proficient consumers, a REST API may be a barrier to data access. Recognizing this, we set out to develop the data commons. Just as Swagger and ReDoc have made the process of documenting REST APIs trivial, the Data Commons aims to deliver data in an easily consumable format (CSV) and also offer quick visualization of queried data.
+
+            Codeveloped with Nico Stranquist https://www.nicostranquist.com
+        </p>
+        <h3>Essential Worker Analysis</h3>
+        <p>
+            During the COVID-19 Pandemic, there was great concern surrounding the vulnerability of essential workers, those with occupations that cannot be performed remotely or without exposure to other people. Recognizing this, the Regional Data Alliance developed a workstream to analyze and disseminate findings about this population in Missouri and Illinois. The final product was a dashboard
+
+            Codeveloped with Theodore Moreland https://github.com/theodoremoreland
+        </p>
+
+        <h3>Open Stack for Open Data</h3>
+        <p>
+            At the Regional Data Alliance we developed in the open, including infrastructure.
+
+            
+        </p>
+        <h3>Vacancy Portal</h3>
+        <p>
+            Scraper
+
+            Actively Maintained: https://www.stlvacancytools.com/
+
+        </p>
+    </div>
+    <div id="wusm" class="content-box container section">
+        <h2>Washington University School of Medicine in St. Louis</h2>
+
+        <h3>LIVE Dashboard</h3>
+
+        Actively Maintained: https://live.idig.science/
+    </div>
+    <div id="slu" class="content-box container section">
+        <h2>Saint Louis University</h2>
+    </div>
+    <div id="gtp" class="content-box container section">
+        <h2>General Technical Proficiencies</h2>
         <h3>Languages</h3>
         <ul>
             <li>R</li>
             <li>Python</li>
-            <li>SQL</li>
+            <li>SQL (Spark, Postgres, BigQuery)</li>
             <li>Scala</li>
             <li>JavaScript</li>
             <li>Bash/Shell Scripting</li>
@@ -93,12 +158,15 @@
         <ul>
             <li>Statistical Programming (R & Python)</li>
             <li>Bayesian Modeling (Stan)</li>
+            <li>Large Systems Design</li>
+            <li>Low Latency Streaming</li>
+            <li>Batch Workloads</li>
         </ul>
         <h3>Frameworks/Libraries</h3>
         <ul>
             <li>Spark (Python, Scala, SQL)</li>
             <li>Hadoop</li>
-            <li>Docker</li>
+            <li>Docker (Compose, Kubernetes)</li>
             <li>Linux Adminstration</li>
             <li>Serverless (AWS, Azure, GCP)</li>
         </ul>
@@ -108,8 +176,14 @@
             <li>Slack API</li>
             <li>ArcGIS/QGIS</li>
             <li>XCP-ng</li>
-            
         </ul>
     </div>
+    <div id="footer">
+        <div class="container">
+            <p>Branson Fox in St. Louis, 2024</p>
+            <p id="archiveButton"><a href="/archive">Explore the Archive</a></p>
+        </div>
+    </div>
+    <script src="../js/toc.js"></script>
 </body>
 </html>
