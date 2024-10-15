@@ -92,11 +92,13 @@
 }
 
 #showStatus {
-    margin-left: -12px;
+    position: relative;
 }
 
 #showStatus svg {
     position: absolute;
+    top: 0;
+    left: 10px;
 }
 
 /* Learn More Items */
@@ -160,4 +162,27 @@
     top: 4px;
     height: 20px;
     max-width: 20px;
+}
+
+#portrait {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column;
+    justify-items: center; */
+    padding: 50px;
+}
+
+#portrait img {
+    /* padding: 50px; */
+    margin: 0 auto;
+    width: 100%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+#portrait-caption {
+    color: var(--med-gray);
+    font-size: 12px;
+    text-align: center;
+    margin-top: -40px;
 }

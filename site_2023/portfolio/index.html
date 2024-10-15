@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/portfolio.css">
 
+    <script src="//unpkg.com/graphre/dist/graphre.js"></script>
+    <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
+
+    <script src="../js/portfolio.js"></script>
+    
+
 </head>
 <body>
     <div id="hero">
@@ -20,131 +26,354 @@
             </div>
         </div>
     </div>
-    <div id="navContent" class="container" style="top: 250px;">
-        <h3><a href="#ncx">NCX</a></h3>
-        <ul>
-            <li>Land Explorer App</li>
-            <li>Land Assessment Platform NCAPI</li>
-            <li>CONUSDB</li>
-            <li>Raster Interpolation at Scale</li>
-            <li>Parcel Ownership Reconciliation</li>
-            <li>Automated Docker Lifecycle</li>
-            <li>Crediting/Methodology/Audit</li>
-            <li>Data Warehouse</li>
-            <li>Benchmarking Platform</li>
-            <li>Mill Pressure Isochrones</li>
-            <li>Timber Price Scrapers</li>
-        </ul>
-        <h3><a href="#rda">Regional Data Alliance</a></h3>
-        <ul>
-            <li>Regional Data Exchange</li>
-            <li>Open Data Commons</li>
-            <li>RDA Member Directory and Forum</li>
-            <li>St. Louis Vacancy Portal</li>
-            <li>An Open Stack for Open Data</li>
-            <li>Regional Data APIs</li>
-            <li>Essential Worker Analysis</li>
-            <li>REDB</li>
-        </ul>
-        <h3><a href="#wusm">Washington University School of Medicine</a></h3>
-        <ul>
-            <li>Statistical Measures of Equity</li>
-            <li>Projecting COVID-19 hospitalizations</li>
-            <li>Vaccine Distribution</li>
-            <li>Statistical Measures of Equality</li>
-            <li>Bibliometric Network Analysis</li>
-            <li>Spatial Correlates of Violent Crime</li>
-            fix /rtm link in archive page of bransonf.com
-            <li>Private Geospatial Infrastructure</li>
-            <li>STL Crime Dashboard</li>
-            <li>LIVE Dashboard</li>
-            <li>Center Initiative Tracker</li>
-            <li>Access to Care Analyses</li>
-            <li>Contact Tracing App</li>
-            <li>HL7 Parser</li>
-        </ul>
-        <h3><a href="#slu">Saint Louis University</a></h3>
-        <ul>
-            <li>Testing sensitivity to MAUP with Polyominoes</li>
-            <li>censusxy R package</li>
-            <li>Building an Open Source Geocoder</li>
-            <li>areal R package</li>
-            <li>Scooter Distribution</li>
-            <li>Creating a Definition of Vacancy</li>
-            <li>Detours - Barriers to Emergency Response</li>
-        </ul>
-        <!-- <h3>Stealth Startup</h3>
-        <ul>
-            <li>Site Selection at Scale</li>
-        </ul> -->
-
-        <!-- <h3>Spatial Data Engineering</h3>
-        <ul>
-            <li>Spatial Data at Scale</li>
-            <li>Spatial Interpolation</li>
-            <li>Open Source Geocoding</li>
-        </ul>
-        <h3>Public Health</h3>
-        <ul>
-            <li>Quantifying Violence</li>
-            <li>Sexually Transmitted Infections</li>
-            <li>COVID-19</li>
-        </ul>
-        <h3>Econometrics</h3>
-        <ul>
-            <li>Homeownership</li>
-            <li>Civic Engagement</li>
-            <li>Estimating Vacancy</li>
-        </ul> -->
-        <h3><a href="#gtp">General Technical Proficiencies</a></h3>
-    </div>
-
-    <div id="ncx" class="content-box container section">
+    <div id="pageContainer">
+    <div id="navContainer">
+        <div id="navContent" class="container" >
+            <div class="navSection">
+                <h3><a href="#ncx">NCX</a></h3>
+                <ul>
+                    <li><a href="#ncx-indexes">Natural Capital Estimator</a></li>
+                    <li><a href="#ncx-land-explorer">Land Explorer App</a></li>
+                    <li><a href="#ncx-lidar">Lidar Maps</a></li>
+                    <li><a href="#ncx-ncapi">Land Assessment Platform (NCAPI)</a></li>
+                    <li><a href="#ncx-conusdb">Spark Raster Pipeline (CONUSDB)</a></li>
+                    <li><a href="#ncx-parcel-owner">Parcel Ownership Reconciliation</a></li>
+                    <li><a href="#ncx-docker">Automated Docker Lifecycle</a></li>
+                    <li><a href="#ncx-credits">Crediting/Methodology/Audit</a></li>
+                    <li><a href="#ncx-warehouse">Data Warehouse Migration</a></li>
+                    <li><a href="#ncx-benchmarking">Benchmarking Platform</a></li>
+                    <li><a href="#ncx-hrm">Mill Pressure Model</a></li>
+                    <li><a href="#ncx-timber">Timber Price Scrapers</a></li>
+                </ul>
+            </div>
+            <div class="navSection">
+                <h3><a href="#rda">Regional Data Alliance</a></h3>
+                <ul>
+                    <li><a href="#rda-x">Regional Data Exchange</a></li>
+                    <li><a href="#rda-odc">Open Data Commons</a></li>
+                    <li><a href="#rda-forum">RDA Member Directory and Forum</a></li>
+                    <li><a href="#rda-vacancy">St. Louis Vacancy Portal</a></li>
+                    <li><a href="#rda-openstack">An Open Stack for Open Data</a></li>
+                    <li><a href="#rda-rdapis">Regional Data APIs</a></li>
+                    <li><a href="#rda-workers">Essential Worker Analysis</a></li>
+                    <li><a href="#rda-redb">REDB</a></li>
+                </ul>
+            </div>
+            <div class="navSection">
+                <h3><a href="#wusm">Washington University<br>School of Medicine</a></h3>
+                <ul>
+                    <li><a href="#wusm-covid">Projecting COVID-19 hospitalizations</a></li>
+                    <li><a href="#wusm-vax">Vaccine Distribution</a></li>
+                    <li><a href="#wusm-equity">Statistical Measures of Equality</a></li>
+                    <li><a href="#wusm-network">Bibliometric Network Analysis</a></li>
+                    <li><a href="#wusm-violence">Spatial Correlates of Violent Crime</a></li>
+                    <li><a href="#wusm-infra">Private Geospatial Infrastructure</a></li>
+                    <li><a href="#wusm-crime">STL Crime Dashboard</a></li>
+                    <li><a href="#wusm-live">LIVE Dashboard</a></li>
+                    <li><a href="#wusm-tracker">Center Initiative Tracker</a></li>
+                    <li><a href="#wusm-access">Access to Care Analyses</a></li>
+                    <li><a href="#wusm-tracing">Contact Tracing App</a></li>
+                    <li><a href="#wusm-hl7">HL7 Parser</a></li>
+                </ul>
+            </div>
+            <div class="navSection">
+                <h3><a href="#slu">Saint Louis University</a></h3>
+                <ul>
+                    <li><a href="#slu-maup">Testing sensitivity to MAUP with Polyominoes</a></li>
+                    <li><a href="#sli-civic">Patterns of Civic Engagement</a></li>
+                    <li><a href="#slu-mortgage">Equity in Historic Mortgage Lending</a></li>
+                    <li><a href="#slu-censusxy">censusxy R package</a></li>
+                    <li><a href="#slu-geocode">Building an Open Source Geocoder</a></li>
+                    <li><a href="#slu-areal">areal R package</a></li>
+                    <li><a href="#slu-scooter">Scooter Distribution</a></li>
+                    <li><a href="#slu-vacancy">Creating a Definition of Vacancy</a></li>
+                    <li><a href="#slu-detours">Detours - Barriers to Emergency Response</a></li>
+                </ul>
+            </div>
+            <div class="navSection">
+                <h3><a href="#gtp">Technical Proficiencies</a></h3>
+            </div> 
+        </div>
+        </div>
+        <div id="contentContainer">
+        <div id="ncx" class="project-content-box container section">
         <h2>Natural Capital Exchange (NCX)</h2>
+        <div id="ncx-indexes" class="project">
+            <h3>Natural Capital Estimator</h3>
+            <p>
+                We wanted to give Landowners a historic estimate of their timber value and a present estimate of the dollar value.
 
+                For this, I developed a series of models grounded in FIA plot sampling data.
+            </p>
+        </div>
+        <div id="ncx-land-explorer" class="project">
+            <h3>Land Explorer App</h3>
+            <p>
+                One of the products we tested at NCX was a land explorer app. This application aggregated a variety of sources related to natural resources and earth observation data and made it available via an interactive front end.
+            </p>
+        </div>
+        <div id="ncx-lidar" class="project">
+            <h3>Lidar Point Cloud Maps</h3>
+            <p>
+                One experiment I ran at NCX was generating compelling 3D visuals using openly available Lidar data from USGS.
+            </p>
+        </div>
+        <div id="ncx-ncapi" class="project">
+            <h3>Land Assessment Platform (NCAPI)</h3>
+            <p>
+                With the launch of NCX 2.0, focusing on matching landowners with available opportunities for natural capital developments, we needed to build an entirely new pipeline to stream assessment results to the end-user platform. 
+            </p>
+        </div>
+        <div id="ncx-conusdb" class="project">
+            <h3>Spark Raster Pipeline (CONUSDB)</h3>
+            <p>
+                We needed to evaluate our carbon program for additionality. 
+            </p>
+        </div>
+        <div id="ncx-parcel-owner" class="project">
+            <h3>Parcel Ownership Reconciliation</h3>
+            <p>
+                I used a variety of natural language processing techniques and network simplification methods to build a CONUS-wide dataset of all properties owned by a single entity. 
+            </p>
+            <div class="interactive-widget">
+                <canvas id="parcel-diagram-canvas"></canvas>
+            </div>
+        </div>
+        <div id="ncx-docker" class="project">
+            <h3>Automated Docker Lifecycle</h3>
+            <p>
+                One of the pain points of working on a mid-sized engineering team was dependency management, rigourous testing and an automated deploy schedule.
+            </p>
+        </div>
+        <div id="ncx-credits" class="project">
+            <h3>Crediting Methodology & Audit</h3>
+            <p>
+                Essential to the integrity of our Carbon crediting program at NCX was the the methodology we used to generate the actual carbon credits we offered for sale. I implemented much of the core crediting logic, including a full process to make intermediate data available for a third-party audit.
+            </p>
+        </div>
+        <div id="ncx-warehouse" class="project">
+            <h3>Data Warehouse Migration</h3>
+            <p>
+                We had a ton of data stored as files in cloud storage. One of my first large infrastructure projects at NCX was migrating us to a fixed schema in a single source of data. Originally we implemented BigQuery and later migrated to Spark.
+            </p>
+        </div>
+        <div id="ncx-benchmarking" class="project">
+            <h3>Benchmarking Platform</h3>
+            <p>
+                One of our concerns as we scaled our carbon crediting pipeline at NCX was the integrity of the underlying models we used to predict and generate carbon credits.
+
+                Tight integration of MLOps across multiple disparate models.
+            </p>
+        </div>
+        <div id="ncx-hrm" class="project">
+            <h3>Mill Pressure Model</h3>
+            <p>
+                Isochrones by product type, feasability used to inform risk of harvest.
+            </p>
+        </div>
+        <div id="ncx-timber" class="project">
+            <h3>Timber Price Scrapers</h3>
+            <p>
+                I built a robust set of multi-modal scraping utilities to extract timber sale prices from a varierty of sources, including XML parsing, headless browser automation and PDF/Image OCR.
+            </p>
+        </div>
     </div>
-    <div id="rda" class="content-box container section">
+    <div id="rda" class="project-content-box container section">
         <h2>St. Louis Regional Data Alliance</h2>
+        <div class="project">
+            <h3>Regional Data Exchange</h3>
+            <p>
 
-        <h3>Open Data Commons</h3>
-        <p>
-            Data is powerful, but only in the hands of the right people. APIs are a powerful way for programmers to access data in an organized way, but for less technically proficient consumers, a REST API may be a barrier to data access. Recognizing this, we set out to develop the data commons. Just as Swagger and ReDoc have made the process of documenting REST APIs trivial, the Data Commons aims to deliver data in an easily consumable format (CSV) and also offer quick visualization of queried data.
+            </p>
+        </div>
+        <div class="project">
+            <h3>Open Data Commons</h3>
+            <p>
+                Data is powerful, but only in the hands of the right people. APIs are a powerful way for programmers to access data in an organized way, but for less technically proficient consumers, a REST API may be a barrier to data access. Recognizing this, we set out to develop the data commons. Just as Swagger and ReDoc have made the process of documenting REST APIs trivial, the Data Commons aims to deliver data in an easily consumable format (CSV) and also offer quick visualization of queried data.
+                
+                Developed with Nico Stranquist https://www.nicostranquist.com
+            </p>
+        </div>
+        <div class="project">
+            <h3>RDA Member Directory and Forum</h3>
+            <p>
 
-            Codeveloped with Nico Stranquist https://www.nicostranquist.com
-        </p>
-        <h3>Essential Worker Analysis</h3>
-        <p>
-            During the COVID-19 Pandemic, there was great concern surrounding the vulnerability of essential workers, those with occupations that cannot be performed remotely or without exposure to other people. Recognizing this, the Regional Data Alliance developed a workstream to analyze and disseminate findings about this population in Missouri and Illinois. The final product was a dashboard
+            </p>
+        </div>
+        <div class="project">
 
-            Codeveloped with Theodore Moreland https://github.com/theodoremoreland
-        </p>
+            <h3>St. Louis Vacancy Portal</h3>
+            <p>
+                Scraper
+    
+                Actively Maintained: https://www.stlvacancytools.com/
+    
+                Developed with Dave Menninger
+    
+            </p>
+        </div>
+        <div class="project">
+            <h3>An Open Stack for Open Data</h3>
+            <p>
+                At the Regional Data Alliance we developed in the open, including infrastructure.
+            </p>
+        </div>
+        <div class="project">
+            <h3>Regional Data APIs</h3>
+            <p></p>
+        </div>
+        <div class="project">
 
-        <h3>Open Stack for Open Data</h3>
-        <p>
-            At the Regional Data Alliance we developed in the open, including infrastructure.
+            <h3>Essential Worker Analysis</h3>
+            <p>
+                During the COVID-19 Pandemic, there was great concern surrounding the vulnerability of essential workers, those with occupations that cannot be performed remotely or without exposure to other people. Recognizing this, the Regional Data Alliance developed a workstream to analyze and disseminate findings about this population in Missouri and Illinois. The final product was a dashboard
+                
+                Developed with Theodore Moreland https://github.com/theodoremoreland
+            </p>
+        </div>
+        <div class="project">
+            <h3>Standard Parcel Data (REDB)</h3>
+            <p>
+                Developed with Jon Leek
+            </p>
+        </div>
 
-            
-        </p>
-        <h3>Vacancy Portal</h3>
-        <p>
-            Scraper
-
-            Actively Maintained: https://www.stlvacancytools.com/
-
-        </p>
     </div>
-    <div id="wusm" class="content-box container section">
+    <div id="wusm" class="project-content-box container section">
         <h2>Washington University School of Medicine in St. Louis</h2>
+        <div class="project">
+            <h3>Projecting COVID-19 hospitalizations</h3>
+            <p>
+                Developed with Joshua Schwab https://github.com/joshuaschwab
+            </p>
+        </div>
+        <div class="project">
+            <h3>Vaccine Distribution</h3>
+            <p>
 
-        <h3>LIVE Dashboard</h3>
+            </p>
+        </div>
+        <div class="project">
+            <h3>Statistical Measures of Equality</h3>
+            <p>
 
-        Actively Maintained: https://live.idig.science/
+            </p>
+        </div>
+        <div class="project">
+            <h3>Bibliometric Network Analysis</h3>
+            <p>
+
+            </p>
+        </div>
+        <div class="project">
+            <h3>Spatial Correlates of Violent Crime</h3>
+            <p>
+
+            </p>
+        </div>
+        <div class="project">
+            <h3>Private Geospatial Infrastructure</h3>
+            <p>
+                Most of my research at the time used highly-sensitive patient records. In addition to implement best practices for data security, I built a variety of private geospatial infrastructure. This included a custom built geocoder and road network routing solution to compute a variety of spatial metrics used in research with collaborators.
+
+                Missouri Pelias.
+            </p>
+        </div>
+        <div class="project">
+            <h3>STL Crime Dashboard</h3>
+            <p>
+
+
+                Became unmaintained when SLMPD stopped publicly releasing data. 
+            </p>
+        </div>
+        <div class="project">
+            <h3>LIVE Dashboard</h3>
+            <p>
+                A large research team compiled hundreds of implementation methods papers for addressing HIV in low and middle income countries. We wanted to disseminate this reserach in a highly interactive manner and I was tasked with building a dashboard to make this happen.
+
+                Actively Maintained: https://live.idig.science/
+            </p>
+        </div>
+        <div class="project">
+            <h3>Center Initiative Tracker</h3>
+            <p>
+
+            </p>
+        </div>
+        <div class="project">
+            <h3>Access to Care Analyses</h3>
+            <p>
+                
+            </p>
+        </div>
+        <div class="project">
+            <h3>Contact Tracing App</h3>
+            <p>
+
+            </p>
+        </div>
+        <div class="project">
+            <h3>HL7 Parser</h3>
+            <p>
+                As part of my efforts in developing the solution for contact tracing COVID-19 cases in St. Louis, Missouri, I built a custom HL7 parser in R to read the esoteric HL7 messaging format used by medical laboratories. Using this, we identified tens of thousands of positive test results days before the statewide reporting results.
+            </p>
+        </div>
     </div>
-    <div id="slu" class="content-box container section">
+    <div id="slu" class="project-content-box container section">
         <h2>Saint Louis University</h2>
+        <div class="project">
+            <h3>Testing sensitivity to MAUP with Polyominoes</h3>
+            <p></p>
+        </div>
+        <div class="project">
+            <h3>Patterns of Civic Engagement</h3>
+            <p></p>
+        </div>
+        <div class="project">
+            <h3>Equity in Historic Mortgage Lending</h3>
+            <p></p>
+        </div>
+        <div class="project">
+            <h3>censusxy R package</h3>
+            <p></p>
+        </div>
+        <div class="project">
+            <h3>Building an Open Source Geocoder</h3>
+            <p></p>
+        </div>
+        <div class="project">
+            <h3>areal R package</h3>
+            <p>
+                The Modifiable Areal Units Problem (MAUP) was a key component of my studies and research in GIS. 
+            </p>
+        </div>
+        <div class="project">
+            <h3>Scooter Distribution</h3>
+            <p>
+                As part of the permitting process to allow dockless vehicle (bicycle & scooter) companies to operate in the City of St. Louis, companies are required to <a href="https://www.stlouis-mo.gov/government/departments/street/traffic/bicycling/st-louis-dockless-bike-share-faq.cfm#5">park 16% of their fleet in designated equity zones.</a>
+                <br>
+                After observing a heavy concentration of vehicles in the more-affluent central cooridor of the City, I was determined to validate whether these equity targets were in-fact being met.
+                <br>
+                After being declined access to the data from a number of Rideshare companies, I <a href="https://github.com/ubahnverleih/WoBike">reverse-engineered their APIs</a> and logged vehicle locations for several weeks.
+                <br>
+                After collecting several weeks of data, I was confident that the operating companies were not adhering to this stipulation in the permit.
+                
+            </p>
+        </div>
+        <div class="project">
+            <h3>Creating a Definition of Vacancy</h3>
+            <p>
+                St Louis missouri has experienced one of the most salient urban declines in the country, resulting in a rise of property vacancy. It was long suspected this was pivotal in a variety of worsened outcomes, but a clear definition of vacancy and the corresponding number and location of vacant properties was unknown. I played a foundational role in building the defintion, data infrastructure and dissemination of the number of vacant properties in St. Louis.
+            </p>
+        </div>
+        <div class="project">
+            <h3>Detours - Barriers to Emergency Response</h3>
+            <p></p>
+        </div>
     </div>
-    <div id="gtp" class="content-box container section">
-        <h2>General Technical Proficiencies</h2>
+    <div id="gtp" class="project-content-box container section">
+        <h2>Technical Proficiencies</h2>
         <h3>Languages</h3>
         <ul>
             <li>R</li>
@@ -153,6 +382,7 @@
             <li>Scala</li>
             <li>JavaScript</li>
             <li>Bash/Shell Scripting</li>
+            <li>LaTex</li>
         </ul>
         <h3>Capabilities</h3>
         <ul>
@@ -166,18 +396,23 @@
         <ul>
             <li>Spark (Python, Scala, SQL)</li>
             <li>Hadoop</li>
+            <li>Dask, Coiled</li>
             <li>Docker (Compose, Kubernetes)</li>
             <li>Linux Adminstration</li>
             <li>Serverless (AWS, Azure, GCP)</li>
+            <li>GDAL, PDAL, OGR, Grass</li>
         </ul>
         <h3>Other Assorted Software</h3>
         <ul>
             <li>Git, Github</li>
             <li>Slack API</li>
+            <li>Metabase API</li>
             <li>ArcGIS/QGIS</li>
             <li>XCP-ng</li>
         </ul>
     </div>
+</div>
+</div>
     <div id="footer">
         <div class="container">
             <p>Branson Fox in St. Louis, 2024</p>
@@ -185,5 +420,6 @@
         </div>
     </div>
     <script src="../js/toc.js"></script>
+    <script src="../js/canvasPan.js"></script>
 </body>
 </html>
