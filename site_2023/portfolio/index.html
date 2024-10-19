@@ -14,7 +14,6 @@
 
     <script src="../js/portfolio.js"></script>
     
-
 </head>
 <body>
     <div id="hero">
@@ -51,26 +50,26 @@
                 <ul>
                     <li><a href="#rda-x">Regional Data Exchange</a></li>
                     <li><a href="#rda-odc">Open Data Commons</a></li>
-                    <li class="hideCondensed"><a href="#rda-forum">RDA Member Directory and Forum</a></li>
                     <li><a href="#rda-vacancy">St. Louis Vacancy Portal</a></li>
-                    <li class="hideCondensed"><a href="#rda-openstack">An Open Stack for Open Data</a></li>
+                    <li><a href="#rda-openstack">An Open Stack for Open Data</a></li>
+                    <li><a href="#rda-redb">Parcel Data (REDB)</a></li>
+                    <li class="hideCondensed"><a href="#rda-forum">RDA Member Directory and Forum</a></li>
                     <li class="hideCondensed"><a href="#rda-rdapis">Regional Data APIs</a></li>
                     <li class="hideCondensed"><a href="#rda-workers">Essential Worker Analysis</a></li>
-                    <li><a href="#rda-redb">REDB</a></li>
                 </ul>
             </div>
             <div class="navSection">
                 <h3><a href="#wusm">Washington University<br>School of Medicine</a></h3>
                 <ul>
                     <li><a href="#wusm-covid">Projecting COVID-19 hospitalizations</a></li>
-                    <li class="hideCondensed"><a href="#wusm-vax">Vaccine Distribution</a></li>
                     <li><a href="#wusm-equity">Statistical Measures of Equality</a></li>
-                    <li><a href="#wusm-prices">Scraping Hospital Price Data</a></li>
-                    <li><a href="#wusm-network">Bibliometric Network Analysis</a></li>
                     <li><a href="#wusm-violence">Spatial Correlates of Violent Crime</a></li>
                     <li><a href="#wusm-infra">Private Geospatial Infrastructure</a></li>
+                    <li><a href="#wusm-live">LIVE Dashboard</a></li>
+                    <li class="hideCondensed"><a href="#wusm-vax">Vaccine Distribution</a></li>
+                    <li class="hideCondensed"><a href="#wusm-prices">Scraping Hospital Price Data</a></li>
+                    <li class="hideCondensed"><a href="#wusm-network">Bibliometric Network Analysis</a></li>
                     <li class="hideCondensed"><a href="#wusm-crime">STL Crime Dashboard</a></li>
-                    <li class="hideCondensed"><a href="#wusm-live">LIVE Dashboard</a></li>
                     <li class="hideCondensed"><a href="#wusm-tracker">Center Initiative Tracker</a></li>
                     <li class="hideCondensed"><a href="#wusm-access">Access to Care Analyses</a></li>
                     <li class="hideCondensed"><a href="#wusm-tracing">Contact Tracing App</a></li>
@@ -82,12 +81,12 @@
                 <ul>
                     <li><a href="#slu-maup">Testing sensitivity to MAUP with Polyominoes</a></li>
                     <li><a href="#slu-civic">Patterns of Civic Engagement</a></li>
+                    <li><a href="#slu-geocode">Building an Open Source Geocoder</a></li>
+                    <li><a href="#slu-areal">areal R package</a></li>
+                    <li><a href="#slu-vacancy">Creating a Definition of Vacancy</a></li>
                     <li class="hideCondensed"><a href="#slu-mortgage">Equity in Historic Mortgage Lending</a></li>
                     <li class="hideCondensed"><a href="#slu-censusxy">censusxy R package</a></li>
-                    <li class="hideCondensed"><a href="#slu-geocode">Building an Open Source Geocoder</a></li>
-                    <li><a href="#slu-areal">areal R package</a></li>
                     <li class="hideCondensed"><a href="#slu-scooter">Scooter Distribution</a></li>
-                    <li><a href="#slu-vacancy">Creating a Definition of Vacancy</a></li>
                     <li class="hideCondensed"><a href="#slu-detours">Barriers to Emergency Response</a></li>
                 </ul>
             </div>
@@ -139,48 +138,66 @@
         <div id="ncx-parcel-owner" class="project">
             <h3>Parcel Ownership Reconciliation</h3>
             <p>
-                I used a variety of natural language processing techniques and network simplification methods to build a CONUS-wide dataset of all properties owned by a single entity. 
+                Working with continental scale parcel data was a neccessity for some of the types of analyses we wanted to perform. Crucially, we needed to know the full land holdings of an individual entity across the United States.
+
+                We had around 150 million individual property records and we wanted to be able for any individual owner to query every property under their ownership.
+
+                To achieve this, I used a variety of natural language processing techniques and a network simplification method to build a CONUS-wide dataset of all properties owned by a single entity.
             </p>
             <div class="interactive-widget">
                 <canvas id="parcel-diagram-canvas"></canvas>
             </div>
         </div>
-        <div id="ncx-docker" class="project">
+        <div id="ncx-docker" class="project hideCondensed">
             <h3>Automated Docker Lifecycle</h3>
             <p>
                 One of the pain points of working on a mid-sized engineering team was dependency management, rigourous testing and an automated deploy schedule.
+
+                More than a dozen data scientists and engineers shared a single monolithic Docker image. Dependency requirements often conflicted, were often out of date and sometimes upgrades would cause silent failures.
+
+                The other data engineers and I built a robust pipeline of Github Actions to improve dependency testing of new feature branches and handle routine upgrades automatically.
             </p>
         </div>
-        <div id="ncx-credits" class="project">
+        <div id="ncx-credits" class="project hideCondensed">
             <h3>Crediting Methodology & Audit</h3>
             <p>
                 Essential to the integrity of our Carbon crediting program at NCX was the the methodology we used to generate the actual carbon credits we offered for sale. I implemented much of the core crediting logic, including a full process to make intermediate data available for a third-party audit.
             </p>
         </div>
-        <div id="ncx-warehouse" class="project">
+        <div id="ncx-warehouse" class="project hideCondensed">
             <h3>Data Warehouse Migration</h3>
             <p>
-                We had a ton of data stored as files in cloud storage. One of my first large infrastructure projects at NCX was migrating us to a fixed schema in a single source of data. Originally we implemented BigQuery and later migrated to Spark.
+                When I arrived at NCX, the standard procedure for recording data was files in cloud storage. This made it difficult for us to run large analytical workloads across datasets and further caused issues for lack of schema enforcement.
+
+                One of my first large infrastructure projects at NCX was migrating us to a fixed schema in a single source of data. We implemented a short term solution with BigQuery but I later migrated the majority of our datasets into Spark on Databricks.
+
+                My solution involved a thorough schema normalization process and the use of file streaming to automatically catalog new data generated while still maintaining our legacy processes.
             </p>
         </div>
-        <div id="ncx-benchmarking" class="project">
+        <div id="ncx-benchmarking" class="project hideCondensed">
             <h3>Benchmarking Platform</h3>
             <p>
-                One of our concerns as we scaled our carbon crediting pipeline at NCX was the integrity of the underlying models we used to predict and generate carbon credits.
+                One of our concerns as we scaled our carbon crediting pipeline at NCX was the integrity of the underlying models we used to predict and generate carbon credits. Specifically, we used a serious of various models in combination to predict harvest risk, prioritize ground sampling, detect loss events and project carbon yields.
 
-                Tight integration of MLOps across multiple disparate models.
+                Given the initiative to benchmark each of these models for continuous improvement across future cycles, I was tasked with creating an MLOps system that could work across models in different environments.
+
+                For this, I used MLFlow hosted on Databricks. I worked with the data scientist responsible for each model and created a set of metrics to be cataloged for each model training. I implemented the logic to generate and upload these metrics to our MLFlow instance and created an ETL pipeline to combine these into a Metabase dashboard for the team to review and guide future data investments.
             </p>
         </div>
-        <div id="ncx-hrm" class="project">
+        <div id="ncx-hrm" class="project hideCondensed">
             <h3>Mill Pressure Model</h3>
             <p>
-                Isochrones by product type, feasability used to inform risk of harvest.
+                The feasability of a timber harvest is largely constrained by the distances and availability of wood processing facilities for the harvested timbers.
+
+                I constructed an isochrone model that considered the characteristics of log-hauling vehicles, road limitations and mill locations by wood product type and capacity.
             </p>
         </div>
-        <div id="ncx-timber" class="project">
+        <div id="ncx-timber" class="project hideCondensed">
             <h3>Timber Price Scrapers</h3>
             <p>
-                I built a robust set of multi-modal scraping utilities to extract timber sale prices from a varierty of sources, including XML parsing, headless browser automation and PDF/Image OCR.
+                Timber price estimates were an integral part of our harvest risk model for determining the economic pressure to harvest specific tree stands. 
+
+                I built a robust set of multi-modal scraping utilities to extract timber stumpage prices from a varierty of sources, including XML parsing, headless browser automation and PDF/Image OCR. Then, I created a standardized schema, complex unit transformations and a pipeline for updating these data quarterly.
             </p>
         </div>
     </div>
@@ -200,19 +217,13 @@
                 Developed with Nico Stranquist https://www.nicostranquist.com
             </p>
         </div>
-        <div id="rda-forum" class="project">
-            <h3>RDA Member Directory and Forum</h3>
-            <p>
-
-            </p>
-        </div>
         <div id="rda-vacancy" class="project">
 
             <h3>St. Louis Vacancy Portal</h3>
             <p>
                 Scraper
     
-                Actively Maintained: https://www.stlvacancytools.com/
+                Actively Maintained: https://www.stlvacancytools.com/stats.html
     
                 Developed with Dave Menninger
     
@@ -221,15 +232,33 @@
         <div id="rda-openstack" class="project">
             <h3>An Open Stack for Open Data</h3>
             <p>
+                One challenge we encountered at the Regional Data Alliance was developing in the open with a low barrier to entry. We had a number of volunteers and external contributors who would often work short or unpredictable periods. 
                 At the Regional Data Alliance we developed in the open, including infrastructure.
             </p>
+            TODO: Find original powerpoint
         </div>
-        <div id="rda-rdapis" class="project">
-            <h3>Regional Data APIs</h3>
-            <p></p>
-        </div>
-        <div id="rda-workers" class="project">
+        <div id="rda-redb" class="project">
+            <h3>Standard Parcel Data (REDB)</h3>
+            <p>
 
+                I participated in an AI Accelerator program sponsored by DataKind and Microsoft.
+                https://www.datakind.org/2019/09/05/applying-ai-to-societal-challenges-in-us-cities-datakind-microsoft-launch-ai-accelerator/
+                Developed with Jon Leek
+            </p>
+        </div>
+        <div id="rda-forum" class="project hideCondensed">
+            <h3>RDA Member Directory and Forum</h3>
+            <p>
+
+            </p>
+        </div>
+        <div id="rda-rdapis" class="project hideCondensed">
+            <h3>Regional Data APIs</h3>
+            <p>
+
+            </p>
+        </div>
+        <div id="rda-workers" class="project hideCondensed">
             <h3>Essential Worker Analysis</h3>
             <p>
                 During the COVID-19 Pandemic, there was great concern surrounding the vulnerability of essential workers, those with occupations that cannot be performed remotely or without exposure to other people. Recognizing this, the Regional Data Alliance developed a workstream to analyze and disseminate findings about this population in Missouri and Illinois. The final product was a dashboard
@@ -237,15 +266,6 @@
                 Developed with Theodore Moreland https://github.com/theodoremoreland
             </p>
         </div>
-        <div id="rda-redb" class="project">
-            <h3>Standard Parcel Data (REDB)</h3>
-            <p>
-
-                I participated in an AI Accelerator program sponsored by DataKind and Microsoft.
-                Developed with Jon Leek
-            </p>
-        </div>
-
     </div>
     <div id="wusm" class="project-content-box container section">
         <h2>Washington University School of Medicine in St. Louis</h2>
@@ -256,29 +276,12 @@
                 Demo Here: https://idig.bransonf.com/LEMMA/
             </p>
         </div>
-        <div id="wusm-vax" class="project">
-            <h3>Vaccine Distribution</h3>
-            <p>
-
-            </p>
-        </div>
+        
         <div id="wusm-equity" class="project">
             <h3>Statistical Measures of Equality</h3>
             <p>
                 Demo Here: https://equity.bransonf.com/
                 R Package Index Here: https://idig.bransonf.com/equity-in-R/
-            </p>
-        </div>
-        <div id="wusm-prices" class="project">
-            <h3>Scraping Hospital Price Data</h3>
-            <p>
-
-            </p>
-        </div>
-        <div id="wusm-network" class="project">
-            <h3>Bibliometric Network Analysis</h3>
-            <p>
-
             </p>
         </div>
         <div id="wusm-violence" class="project">
@@ -295,14 +298,6 @@
                 Missouri Pelias.
             </p>
         </div>
-        <div id="wusm-crime" class="project">
-            <h3>STL Crime Dashboard</h3>
-            <p>
-
-
-                Became unmaintained when SLMPD stopped publicly releasing data. 
-            </p>
-        </div>
         <div id="wusm-live" class="project">
             <h3>LIVE Dashboard</h3>
             <p>
@@ -311,58 +306,117 @@
                 Actively Maintained: https://live.idig.science/
             </p>
         </div>
-        <div id="wusm-tracker" class="project">
-            <h3>Center Initiative Tracker</h3>
+        <div id="wusm-vax" class="project hideCondensed">
+            <h3>Vaccine Distribution</h3>
             <p>
 
             </p>
         </div>
-        <div id="wusm-access" class="project">
+        <div id="wusm-prices" class="project hideCondensed">
+            <h3>Scraping Hospital Price Data</h3>
+            <p>
+
+            </p>
+        </div>
+        <div id="wusm-network" class="project hideCondensed">
+            <h3>Bibliometric Network Analysis</h3>
+            <p>
+
+            </p>
+        </div>
+        
+        <div id="wusm-crime" class="project hideCondensed">
+            <h3>STL Crime Dashboard</h3>
+            <p>
+
+
+                Became unmaintained when SLMPD stopped publicly releasing data. 
+            </p>
+        </div>
+        
+        <div id="wusm-tracker" class="project hideCondensed">
+            <h3>Center Initiative Tracker</h3>
+            <p>
+
+            </p>
+            didash.bransonf.com
+        </div>
+        <div id="wusm-access" class="project hideCondensed">
             <h3>Access to Care Analyses</h3>
             <p>
                 
             </p>
         </div>
-        <div id="wusm-tracing" class="project">
+        <div id="wusm-tracing" class="project hideCondensed">
             <h3>Contact Tracing App</h3>
             <p>
 
             </p>
         </div>
-        <div id="wusm-hl7" class="project">
+        <div id="wusm-hl7" class="project hideCondensed">
             <h3>HL7 Parser</h3>
             <p>
                 As part of my efforts in developing the solution for contact tracing COVID-19 cases in St. Louis, Missouri, I built a custom HL7 parser in R to read the esoteric HL7 messaging format used by medical laboratories. Using this, we identified tens of thousands of positive test results days before the statewide reporting results.
             </p>
+            Unmaintained: https://github.com/bransonf/hl7r
         </div>
     </div>
     <div id="slu" class="project-content-box container section">
         <h2>Saint Louis University</h2>
         <div id="slu-maup" class="project">
             <h3>Testing sensitivity to MAUP with Polyominoes</h3>
-            <p></p>
+            <p>
+                In unfinished work, I work to develop a sensitivity analysis to the Modifiable Areal Units Problem (MAUP) using Polyominoes.
+                https://en.m.wikipedia.org/wiki/Polyomino
+
+                Made Possible by Matt Busche's Polycube program: https://www.mattbusche.org/blog/article/polycube/
+
+                <!-- https://news.ycombinator.com/item?id=26393381 -->
+            </p>
         </div>
         <div id="slu-civic" class="project">
             <h3>Patterns of Civic Engagement</h3>
             <p></p>
         </div>
-        <div id="slu-mortgage" class="project hideCondensed">
-            <h3>Equity in Historic Mortgage Lending</h3>
-            <p></p>
-        </div>
-        <div id="slu-censusxy" class="project hideCondensed">
-            <h3>censusxy R package</h3>
-            <p></p>
-        </div>
-        <div id="slu-geocode" class="project hideCondensed">
+        <div id="slu-geocode" class="project">
             <h3>Building an Open Source Geocoder</h3>
-            <p></p>
+            <p>
+                Geocoding, the act of converting an address string into a numeric location, was a central part of my education in GIS and a recurrent theme in my research. After having dealt with a number of nuanced datasets that required specific preprocessing to achieve desriable geocodes, my advisor Chris Prener and I decided to build our own.
+
+                We compared a number of commercial geocoding options available at the time, 
+            </p>
         </div>
         <div id="slu-areal" class="project">
             <h3>areal R package</h3>
             <p>
                 The Modifiable Areal Units Problem (MAUP) was a key component of my studies and research in GIS. 
+
+                With the areal R package, Chris Prener and I attempt to implement a variety of methods for areal weighted interpolation.
+
+                Dasymetric, Pycnophylactic, Regressive and Hybrid methods were implemented for both spatially intensive and extensive data types.
             </p>
+        </div>
+        <div id="slu-vacancy" class="project">
+            <h3>Creating a Definition of Vacancy</h3>
+            <p>
+                St. Louis, Missouri has experienced one of the most salient urban declines in the country, resulting in a rise of property vacancy. It was long suspected this was pivotal in a variety of worsened outcomes, but a clear definition of vacancy and the corresponding number and location of vacant properties was unknown. I played a foundational role in building the defintion, data infrastructure and dissemination of the number of vacant properties in St. Louis.
+
+                I became heavily involved in the St. Louis Vacancy Collaborative 
+                https://www.stlvacancy.com/
+            </p>
+        </div>
+        <div id="slu-mortgage" class="project hideCondensed">
+            <h3>Equity in Historic Mortgage Lending</h3>
+            <p>
+                In my final undegraduate honor's thesis, I explore the historic demographic shift of the City of St. Louis through a lens of mortgage lending incentives and practices. I analyze Home Mortgage Discloure Act (HMDA) data, 
+            </p>
+        </div>
+        <div id="slu-censusxy" class="project hideCondensed">
+            <h3>censusxy R package</h3>
+            <p>
+                While doing a variety of research with large datasets, such as county scale voter files 
+            </p>
+            Currently Maintained by Chris Prener: https://github.com/chris-prener/censusxy
         </div>
         <div id="slu-scooter" class="project hideCondensed">
             <h3>Scooter Distribution</h3>
@@ -376,21 +430,17 @@
                 After collecting several weeks of data, I was confident that the operating companies were not adhering to this stipulation in the permit.
                 
             </p>
-        </div>
-        <div id="slu-vacancy" class="project">
-            <h3>Creating a Definition of Vacancy</h3>
-            <p>
-                St Louis missouri has experienced one of the most salient urban declines in the country, resulting in a rise of property vacancy. It was long suspected this was pivotal in a variety of worsened outcomes, but a clear definition of vacancy and the corresponding number and location of vacant properties was unknown. I played a foundational role in building the defintion, data infrastructure and dissemination of the number of vacant properties in St. Louis.
-            </p>
+            TODO: ADD GIF HERE
         </div>
         <div id="slu-detours" class="project hideCondensed">
             <h3>Barriers to Emergency Response</h3>
             <p>
                 In unpublished work titled "Detours" I investigate the impact of street closures, meant to deter crime, on potential emergency response times.
-                <br>
+            </p>
+            <p>
                 I created two sophisticated road network models representing the City of St. Louis with and without these barriers, including speed limits and turn penalties. I then ran simulated routes originating from various emergency service locations and reaching every building footprint in the City. 
-                
-                <br>
+            </p> 
+            <p>
                 Building on the work of Chris Prener's street closure 
                 https://osf.io/preprints/socarxiv/2wext
             </p>
@@ -398,58 +448,72 @@
     </div>
     <div id="gtp" class="project-content-box container section">
         <h2>Technical Proficiencies</h2>
-        <h3>Languages</h3>
-        <ul>
-            <li>Python</li>
-            <li>R</li>
-            <li>SQL (Spark, Postgres, BigQuery)</li>
-            <li>Scala</li>
-            <li>JavaScript</li>
-            <li>Bash/Shell Scripting</li>
-            <li>LaTex</li>
-        </ul>
-        <h3>Databases</h3>
-        <ul>
-            <li>Postgres + PostGIS</li>
-            <li>Spark (Hive + Delta)</li>
-            <li>MongoDB</li>
-            <li>BigQuery</li>
-            <li>DuckDB</li>
-            <li>MariaDB</li>
-        </ul>
-        <h3>Distributed Compute</h3>
-        <ul>
-            <li>Metaflow</li>
-            <li>Apache Spark</li>
-            <li>Dask on Coiled</li>
-            <li>Hadoop</li>
-        </ul>
-        <h3>Capabilities</h3>
-        <ul>
-            <li>Statistical Programming (R & Python)</li>
-            <li>Bayesian Modeling (Stan)</li>
-            <li>Large Systems Design</li>
-            <li>Low Latency Streaming</li>
-            <li>Batch Workloads</li>
-        </ul>
-        <h3>Frameworks/Libraries</h3>
-        <ul>
-            <li>Spark (Python, Scala, SQL)</li>
-            <li>Hadoop</li>
-            <li>Dask, Coiled</li>
-            <li>Docker (Compose, Kubernetes)</li>
-            <li>Linux Adminstration</li>
-            <li>Serverless (AWS, Azure, GCP)</li>
-            <li>GDAL, PDAL, OGR, Grass</li>
-        </ul>
-        <h3>Other Assorted Software</h3>
-        <ul>
-            <li>Git, Github</li>
-            <li>Slack API</li>
-            <li>Metabase API</li>
-            <li>ArcGIS/QGIS</li>
-            <li>XCP-ng</li>
-        </ul>
+        <div class="gtpContainer">
+            <div class="gtpItem">
+                <h3>Languages</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>R</li>
+                    <li>SQL (Spark, Postgres, BigQuery)</li>
+                    <li>Scala</li>
+                    <li>JavaScript</li>
+                    <li>Bash/Shell Scripting</li>
+                    <li>LaTex</li>
+                </ul>
+            </div>
+            <div class="gtpItem">
+                <h3>Databases</h3>
+                <ul>
+                    <li>Postgres + PostGIS</li>
+                    <li>Spark (Hive + Delta)</li>
+                    <li>MongoDB</li>
+                    <li>BigQuery</li>
+                    <li>DuckDB</li>
+                    <li>MariaDB</li>
+                </ul>
+            </div>
+            <div class="gtpItem">
+                <h3>Distributed Compute</h3>
+                <ul>
+                    <li>Metaflow</li>
+                    <li>Apache Spark</li>
+                    <li>Dask on Coiled</li>
+                    <li>Hadoop</li>
+                </ul>
+            </div>
+            <div class="gtpItem">
+                <h3>Capabilities</h3>
+                <ul>
+                    <li>Statistical Programming (R & Python)</li>
+                    <li>Bayesian Modeling (Stan)</li>
+                    <li>Large Systems Design</li>
+                    <li>Low Latency Streaming</li>
+                    <li>Batch Workloads</li>
+                </ul>
+            </div>
+            <div class="gtpItem">
+                <h3>Frameworks/Libraries</h3>
+                <ul>
+                    <li>Spark (Python, Scala, SQL)</li>
+                    <li>Hadoop</li>
+                    <li>Dask, Coiled</li>
+                    <li>Docker (Compose, Kubernetes)</li>
+                    <li>Linux Adminstration</li>
+                    <li>Serverless (AWS, Azure, GCP)</li>
+                    <li>GDAL, PDAL, OGR, Grass</li>
+                </ul>
+            </div>
+            <div class="gtpItem">
+                <h3>Other Assorted Software</h3>
+                <ul>
+                    <li>Git, Github</li>
+                    <li>Slack API</li>
+                    <li>Metabase API</li>
+                    <li>ArcGIS/QGIS</li>
+                    <li>XCP-ng</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 </div>
