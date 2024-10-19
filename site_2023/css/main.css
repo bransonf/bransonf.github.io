@@ -105,6 +105,42 @@ a:visited {
     left: 0;
 }
 
+
+.ul-fade {
+    display: inline;
+    position: relative;
+    overflow: hidden;
+}
+.ul-fade:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    /* right: 100%; */
+    left: 0;
+    /* bottom: -5px; */
+    background: var(--red);
+    height: 2px;
+    transition-property: left right;
+    transition-duration: .3s;
+    transition-timing-function: ease-out;
+    pointer-events: none;
+    bottom: 0;
+    left: 5px;
+    width: calc(100% - 10px);
+    height: 0.1em;
+    background-color: var(--red);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+    border-radius: 2px;
+}
+.ul-fade:hover:after,
+.ul-fade:focus:after,
+.ul-fade:active::after {
+    right: 0;
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}
+
 .content-box {
     height: 500px;
     padding: 25px;

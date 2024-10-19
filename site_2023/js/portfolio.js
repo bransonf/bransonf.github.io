@@ -15,6 +15,25 @@ window.onload = function(){
     // nomnoml.draw(canvas, source)
 };
 
+changeMode = function(){
+    let modeText = document.getElementById('portfolioMode')
+    let hideItems = document.querySelectorAll(".hideCondensed")
+    let curmode = modeText.dataset.mode;
+    if (curmode == "full"){
+        modeText.innerHTML = "A curated selection";
+        modeText.dataset.mode = "condensed";
+        hideItems.forEach(element => {
+            element.style.display = "none"
+        });
+    } else if (curmode == "condensed") {
+        modeText.innerHTML = "An (almost) comprehensive list";
+        modeText.dataset.mode = "full";
+        hideItems.forEach(element => {
+            element.style.display = "block"
+        });
+    }
+}
+
 // initCanvasPanning = function(){
 //     var canvas = document.getElementById("parcel-diagram-canvas"); 
 //     var ctx = canvas.getContext("2d");

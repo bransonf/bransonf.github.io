@@ -78,6 +78,7 @@
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    /* justify-items: center; */
     padding-top: 5px;
 }
 .slideshow-controls a:hover {

@@ -22,6 +22,7 @@
 }
 .project p {
     margin-left: 10px;
+    /* line-height: 2rem; */
 }
 
 #pageContainer {
@@ -61,8 +62,12 @@
     color: var(--black);
 }
 
+#navContent ul li {
+    padding: 3px;
+}
+
 #navContent ul li a {
-    color: var(--black)
+    color: var(--black);
 }
 
 #navContent h3.active a {
@@ -112,4 +117,9 @@
 
 .interactive-widget canvas {
     width: 100%;
+}
+
+#portfolioMode {
+    color: var(--red);
+    cursor: pointer;
 }
