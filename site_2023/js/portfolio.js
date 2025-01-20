@@ -13,6 +13,8 @@ window.onload = function(){
     });
     // var source = '[nomnoml] is -> [awesome]'
     // nomnoml.draw(canvas, source)
+
+    renderPDF()
 };
 
 changeMode = function(){
@@ -33,6 +35,37 @@ changeMode = function(){
         });
     }
 }
+
+// Render SLU Civic PDF in Canvas element
+const pdfPath = "../data/EcometricTurnout.pdf"
+// pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.8.69/build/pdf.worker.min.js";
+renderPDF = function(){
+    pdfjsLib.getDocument(pdfPath).promise.then(function(pdf) {
+        // Fetch the first page
+        pdf.getPage(1).then(function(page) {
+          var scale = 1;
+          var viewport = page.getViewport({ scale: scale });
+            console.log(viewport)
+          // Prepare canvas using PDF page dimensions
+          var canvas = document.getElementById('slu-civic-canvas');
+          var context = canvas.getContext('2d');
+          canvas.height = viewport.viewBox[2];
+          canvas.width = viewport.viewBox[2];
+          
+          context.translate(0, canvas.width);
+          context.scale(1, -1);
+        //   canvas.style.transform = 'rotate(180deg)';
+      
+          // Render PDF page into canvas context
+          var renderContext = {
+            canvasContext: context,
+            viewport: viewport
+          };
+          page.render(renderContext);
+        });
+      });
+}
+
 
 // initCanvasPanning = function(){
 //     var canvas = document.getElementById("parcel-diagram-canvas"); 

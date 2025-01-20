@@ -143,3 +143,17 @@
 .gtpItem ul {
     padding-left: 20px;
 }
+
+a.hlight {
+    /* color: white; */
+    background-image: linear-gradient(transparent 0%, transparent calc(50% - 8px), rgba(25, 138, 204, 0.35) calc(50% - 8px), rgba(25, 138, 204, 0.35) 100%);
+    transition: background-position 120ms ease-in-out, padding 120ms ease-in-out;
+    background-size: 100% 200%;
+    text-decoration: none;
+}
+
+a.hlight:hover {
+    padding: 2px 0 4px 0;
+    background-image: linear-gradient(transparent 0%, transparent calc(50% - 8px), rgba(25, 138, 204, 1) calc(50% - 8px), rgba(25, 138, 204, 1) 100%);
+    background-position: 0 100%;
+}
