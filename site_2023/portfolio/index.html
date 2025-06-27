@@ -35,9 +35,12 @@
             <div class="navSection">
                 <h3><a href="#ncx">NCX</a></h3>
                 <ul>
+                    <li><a href="#ncx-stands">Automated Stand Delineation</a></li>
                     <li><a href="#ncx-indexes">Natural Capital Scores</a></li>
                     <li><a href="#ncx-land-explorer">Land Explorer App</a></li>
                     <li><a href="#ncx-lidar">Lidar Maps</a></li>
+                    <li><a href="#ncx-loss">Loss Detection</a></li>
+                    <li><a href="#ncx-estimates">Timber Value Estimates</a></li>
                     <li><a href="#ncx-ncapi">Land Assessment Platform (NCAPI)</a></li>
                     <li><a href="#ncx-conusdb">Spark Raster Pipeline (CONUSDB)</a></li>
                     <li><a href="#ncx-parcel-owner">Parcel Ownership Reconciliation</a></li>
@@ -102,11 +105,16 @@
         <div id="contentContainer">
         <div id="ncx" class="project-content-box container section">
         <h2>Natural Capital Exchange (NCX)</h2>
+        <div id="ncx-stands" class="project">
+            <h3>Automated Stand Delineation</h3>
+            <p>
+                Part of our process in making recommendations to landowners involved delineating stand boundaries for their forested land. Typically, this is a fully manual process done by a forestor. I wrote an image processing pipeline that delineated stands using NAIP imagery, canopy height derived from LiDar and various raster sources to approximate forest type/species and age of the trees. Although we never shipped a fully automated solution, a semi-automated soulution significantly increased our throughput in delivering accurate stand delineations in a timely manner.
+            </p>
+        </div>
         <div id="ncx-indexes" class="project">
             <h3>Natural Capital Scores</h3>
             <p>
                 Part of our product strategy at NCX is giving landowners personalized estimates of various natural capital assets on their land. This includes things like timber value, carbon storage potential and forest health. We explored several approaches to creating this data, from an FIA plot state transition model to eventually using the US Forest Service's own Forest Vegetation Simulator (FVS). I created a distributed pipeline using Dask on Coiled to run FVS across tens of thousands of FIA plots in under an hour.
-                
             </p>
         </div>
         <div id="ncx-land-explorer" class="project">
@@ -125,6 +133,18 @@
                 One experiment I ran at NCX was generating compelling 3D visuals using openly available Lidar data from USGS.
             </p>
         </div>
+        <div id="ncx-loss" class="project">
+            <h3>Loss Detection</h3>
+            <p>
+                A critical component of land analysis is loss detection. At MCX, we attempted many varieties of loss detection, from our own in-house method to using the OPERA dataset from NASA 
+            </p>
+        </div>
+        <div id="ncx-estimates" class="project">
+            <h3>Timber Value Estimates</h3>
+            <p>
+                In valuing natural capital, timber serves as an important baseline for comparison. I built a timber pricing model, scraping numerous data sources for timber prices and combining this with volume estimates to generate accurate estimates of timber value.
+            </p>
+        </div>
         <div id="ncx-ncapi" class="project">
             <h3>Land Assessment Platform (NCAPI)</h3>
             <p>
@@ -132,12 +152,15 @@
 
                 Brought tons of visualization features to the platform. Intelligent cataloging and management of raster data.
 
+                Built around microservices from the EoAPI stack developed by DevSeed.
+
+                Developed with Henry Rodman. 
             </p>
         </div>
         <div id="ncx-conusdb" class="project">
             <h3>Spark Raster Pipeline (CONUSDB)</h3>
             <p>
-                We needed to evaluate our carbon program for additionality. 
+                After failing to get our credit certified, we attempted to do our own in-house analysis of additionality. I built a large pipeline in Spark on Databricks to generate likelihood of harvest and create a pool of comparison properties to evaluate our enrolled properties against. 
             </p>
         </div>
         <div id="ncx-parcel-owner" class="project">
@@ -211,31 +234,33 @@
         <div id="rda-x" class="project">
             <h3>Regional Data Exchange</h3>
             <p>
-
+                The core mission of the RDA was to put data in the hands of stakeholders spanning from highly-technical academics and agencies to less-technical members of the public. In addition to the APIs that we released, we built an openly accessible portal that catalogs all known regional datasets.
+            </p>
+            <p>
+                Available at <a class="hlight" href="https://rdx.stldata.org/">rdx.stldata.org</a>
             </p>
         </div>
         <div id="rda-odc" class="project">
             <h3>Open Data Commons</h3>
             <p>
                 Data is powerful, but only in the hands of the right people. APIs are a powerful way for programmers to access data in an organized way, but for less technically proficient consumers, a REST API may be a barrier to data access. Recognizing this, we set out to develop the data commons. Just as Swagger and ReDoc have made the process of documenting REST APIs trivial, the Data Commons aims to deliver data in an easily consumable format (CSV) and also offer quick visualization of queried data.
+            </p>
+            <p>
                 
-                Developed with <a href="https://www.nicostranquist.com">Nico Stranquist</a> 
+                Developed with <a class="hlight" href="https://www.nicostranquist.com">Nico Stranquist</a>, demo <a class="hlight" href="https://apps.stldata.org/data-commons/crime/">available here</a> 
             </p>
         </div>
         <div id="rda-vacancy" class="project">
-
             <h3>St. Louis Vacancy Portal</h3>
             <p>
                 The St. Louis Vacancy Portal was the ultimate culimination of years in developing a classification method and data streams to be able to produce routinely updated estimates of property vacancy and provide legal officials the resources neccessary to pursue abatement.
-
-                I built and maintain a scraper to ingest streams of property data from the City of St. Louis that feed into a custom web application developed by <a href="https://publicgoodness.org/">Dave Menninger</a>
-
-                   
-                Actively Maintained: <a href="https://www.stlvacancytools.com/stats.html">https://www.stlvacancytools.com/stats.html</a>
-    
+            </p>
+            <p>
+                I built and maintain a scraper to ingest streams of property data from the City of St. Louis that feed into a custom web application developed by <a class="hlight" href="https://publicgoodness.org/">Dave Menninger</a>
+            </p>
+            <p>    
+                Actively Maintained: <a class="hlight" href="https://www.stlvacancytools.com/stats.html">www.stlvacancytools.com/stats.html</a>    
                 <!-- Walker Hamilton -->
-    
-                
             </p>
         </div>
         <div id="rda-openstack" class="project">
@@ -244,11 +269,9 @@
                 One challenge we encountered at the Regional Data Alliance was developing in the open with a low barrier to entry. We had a number of volunteers and external contributors who would often work short or unpredictable periods. 
                 At the Regional Data Alliance we developed in the open, including infrastructure, and wanted a repeatable technology pattern to work across projects and repositories.
             </p>
-            
             <div id="openStackSlides">
                 <iframe src="../data/RDA_Stack.pdf" width="100%" height="500" style="border: none;"></iframe>
             </div>
-
         </div>
         <div id="rda-redb" class="project">
             <h3>Standard Parcel Data (REDB)</h3>
@@ -260,6 +283,9 @@
             </p>
                 During the course of this project, I participated in an <a href="https://www.datakind.org/2019/09/05/applying-ai-to-societal-challenges-in-us-cities-datakind-microsoft-launch-ai-accelerator/">AI Accelerator program</a> sponsored by DataKind and Microsoft.  
             </p>
+            <p>
+                Unmaintained: <a class="hlight" href="https://github.com/stlrda/REDB-Workflows">REDB Github</a>
+            </p>
         </div>
         <div id="rda-forum" class="project hideCondensed">
             <h3>RDA Member Directory and Forum</h3>
@@ -268,14 +294,12 @@
             </p>
             <p>
                 I built a member directory associated with a Discourse forum, where data alliance memebers could discuss their data needs, open roles, and events going on in the community.
-
             </p>
         </div>
         <div id="rda-rdapis" class="project hideCondensed">
             <h3>Regional Data APIs</h3>
             <p>
-
-
+                One of the first things we built at RDA were a variety of APIs to access data like crime incidents, property vacancy and a varierty of demographic and health metrics. This later fueled our development of things like the data exchange, dashboards, and the open data commons. 
             </p>
         </div>
         <div id="rda-workers" class="project hideCondensed">
@@ -292,13 +316,27 @@
         <div id="wusm-covid" class="project">
             <h3>Projecting COVID-19 hospitalizations</h3>
             <p>
-                Developed with Joshua Schwab https://github.com/joshuaschwab
-                Demo Here: https://idig.bransonf.com/LEMMA/
+                Perhaps the most important metric during the COVID-19 pandemic was frequency of hospitalization and total hospital utitlization. Measuring confirmed cases through tests alone is extremely prone to under-ascertainment. Hospitalizations, however, are nearly unavoidable and offer direct insight into the true severity of COVID-19 transmission. Hospital utilization also signals the most risk of mortality, both in the progression of COVID-19 infections and the capacity for healthcare systems to address other critical forms of medical treatment.
+            </p>
+            <p>
+                Developed with <a class="hlight" href="https://github.com/joshuaschwab">Joshua Schwab</a> and numerous collaborators, I maintained a fork of the <a class="hlight" href="https://github.com/LocalEpi/LEMMA">"LEMMA" model</a> for the state of Missouri.
+            </p>
+            <p>
+                The model was updated weekly with inputs from all health systems across the state, aggregated by our partners at the Missouri Hospital Association, and used both to project future hospitalizations and simulate the effect of various public health interventions.
+            </p>
+            <p>
+                Model results were shared prominently with stakeholders across the state, including the Governor's office, the Missouri Hospital Association, the St. Louis Covid Task Force, local health agencies and the largest healthcare providers in the state, among others.
+            </p>
+            <p>
+                <a class="hlight" href="https://idig.bransonf.com/LEMMA/">Demo Available</a>
             </p>
         </div>
         
         <div id="wusm-equity" class="project">
             <h3>Statistical Measures of Equality</h3>
+            <p>
+                During COVID, there are many questions about an equitable distribution of vaccines and an inequitable distribution of cases and morbidity related to COVID infections. This motivated an inquiry into statistical measures of inequality and their interpretation for use in public health. I investigated a number of popular indices and even developed some novel methods of my own. 
+            </p>
             <p>
                 Demo Here: https://equity.bransonf.com/
                 R Package Index Here: https://idig.bransonf.com/equity-in-R/
@@ -307,30 +345,36 @@
         <div id="wusm-violence" class="project">
             <h3>Spatial Correlates of Violent Crime</h3>
             <p>
-                At the intersection of my research interests in violent crime and vacancy, I conducted an analysis using Risk Terrain Modeling to observe the relationship of 
-
-                Demo Here: https://bransonf.com/archive/2020-06-03/rtm/
+                At the intersection of my research interests in violent crime and vacancy, I conducted an analysis using Risk Terrain Modeling to observe the relationship of vacant property on violent crime (homicide and aggravated assault).
             </p>
             <p>
-                Publication Here: https://journals.sagepub.com/doi/abs/10.1177/0734016821996795
+                We found vacancy to be among the most prodominant drivers of violent crime, and observed varying geographic effects of risk terrain modeling in constrained local models.
+            </p>
+            <p>
+                <a class="hlight" href="https://bransonf.com/archive/2020-06-03/rtm/">Demo Available</a> and <a class="hlight" href="https://journals.sagepub.com/doi/abs/10.1177/0734016821996795">Publication Here.</a>
             </p>
         </div>
         <div id="wusm-infra" class="project">
             <h3>Private Geospatial Infrastructure</h3>
             <p>
                 Most of my research at the time used highly-sensitive patient records. In addition to implementing best practices for data security, I built a variety of private geospatial infrastructure. This included a custom built geocoder and road network routing solution to compute a variety of spatial metrics used in research with collaborators.
-
-                I originally developed both my own road-interpolation geocoder and weighted road networking graph simulator and later switched to more scalable open source solutions including <a href="https://github.com/pelias/pelias">Pelias</a> and <a href="https://github.com/graphhopper/graphhopper">Graphhopper</a>
+            </p>
+            <p>
+                I originally developed both my own road-interpolation geocoder and weighted road networking graph simulator and later switched to more scalable open source solutions including <a class="hlight" href="https://github.com/pelias/pelias">Pelias</a> and <a class="hlight" href="https://github.com/graphhopper/graphhopper">Graphhopper</a>
             </p>
         </div>
         <div id="wusm-live" class="project">
             <h3>LIVE Dashboard</h3>
             <p>
                 A large research team compiled hundreds of implementation methods papers for addressing HIV in low and middle income countries. We wanted to disseminate this reserach in a highly interactive manner and I was tasked with building an app to make this happen.
-
+            </p>
+            <p>
                 The result is a highly interactive shiny dashboard that has been viewed by hundreds of researchers.
-
-                Actively Maintained:<a href="https://live.bransonf.com">https://live.bransonf.com/</a>
+            <p>
+                Actively Maintained:<a class="hlight" href="https://live.bransonf.com">live.bransonf.com</a>
+            </p>
+            <p>
+                Publication: <a class="hlight" href="https://onlinelibrary.wiley.com/doi/full/10.1002/jia2.26263">JIAS</a> 
             </p>
         </div>
         <div id="wusm-vax" class="project hideCondensed">
@@ -339,7 +383,7 @@
                 The availability of effective COVID-19 vaccines in early 2022 presented a huge opportunity to begin ending the pandemic. It also presented a number of logistical challenges for a variety of agencies to handle.
             </p>
             <p>
-                As a consultant to the Missouri governors office, my team and I provided a variety of resources and analytics in directing vaccine and testing distribution across the state.
+                As a consultant to the Missouri governor's office, my team and I provided a variety of resources and analytics in directing vaccine and testing distribution across the state.
             </p>
             <p>
                 We also worked with local health authorities to prioritize strategic vaccination sites.
@@ -349,53 +393,58 @@
             <h3>Scraping Hospital Price Data</h3>
             <p>
                 A small, untapped research agenda of mine is understanding how the economics of hospital pricing influence the populations most served. The untested hypothesis is that higher prices or poor network benefits in more geographically proximal instituions result in upward pressure on lower priced medical facilities, which becomes a particular burden in seasonal periods of high utilization.
-
-                The difficulty in pursuing this research inquiry is the lack of transparency in hospital service price reporting, even depsite <a href="https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency">government regulation</a> to do so.
-
-
-                I participated in a <a href="https://www.dolthub.com/repositories/dolthub/hospital-price-transparency-v3/pulls/96?refName=main">dolthub bounty</a> and contributed a significant enough amount of data to put me on the leader board.
+            </p>
+            <p>
+                The difficulty in pursuing this research inquiry is the lack of transparency in hospital service price reporting, even depsite <a class="hlight" href="https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency">government regulation</a> to do so.
+            </p>
+            <p>
+                I participated in a <a class="hlight" href="https://www.dolthub.com/repositories/dolthub/hospital-price-transparency-v3/pulls/96?refName=main">dolthub bounty</a> and contributed a significant enough amount of data to put me on the leader board.
             </p>
         </div>
         <div id="wusm-network" class="project hideCondensed">
             <h3>Bibliometric Network Analysis</h3>
             <p>
                 A key component of dissemination and implementation (D&I) in science is promoting scientific findings through collaboratorative research efforts. To better understand the impact of this cross-collaboration, I was tasked with producing some analysis of D&I faculty at WashU and their relative contribution to the collaboratorative D&I network.
-
+            </p>
+            <p>
                 To achieve this, I first consulted with our research librarian, and then scraped several publishing databases to produce a list all of works published by select faculty and their collaborators.
-
+            </p>
+            <p>
                 With these data in hand, I applied a number of network analyses to measure key metrics like network centrality and weighted distance rankings. This identified a number of potential mechanisms for distributing grant funding and the importance of both intra- and inter-institutional collaboration in facilitating large, effective research networks.
             </p>
         </div>
-        
         <div id="wusm-crime" class="project hideCondensed">
             <h3>STL Crime Dashboard</h3>
             <p>
                 Crime is something that has long been a public issue for the City of St. Louis and has fueled decades of divisive discourse. Understanding how we got here and what to do about it was the research inquiry that lead to the start of my career in public health.
-
+            </p>
+            <p>
                 I joined the Gun Violence Prevention Center at Washington University's Institute for Public health and used my skillset across a variety of research into crime, econometrics and violence prevention.
-
-                Among the earliest products to come out of this work was a public dashboard that allowed anyone to observe any cross-section of crime they were interested in, including custom maps, time series trends and environmental covariates of crime.
-
+            </p>
+            <p>
+                Among the earliest products to come out of this work was a public dashboard that allowed anyone to observe any cross-section of crime they were interested in, including custom maps, time series trends and environmental covariates of crime.    
+            </p>
+            <p>
                 This was a major undertaking, building a process to scrape transform and normalize a variety of data and building a full stack application to interact with these data.
-
-                Unfortunately, the project became unmaintained when SLMPD stopped publicly releasing data at the end of 2020. Fortunately, after some pressure from a local news outlet, the city has <a href="https://www.stltoday.com/news/local/crime-courts/st-louis-police-publish-detailed-monthly-crime-data-for-first-time-in-3-years/article_6a0ac5d8-dbd0-11ee-b7e3-77aba9b02ce7.html">resumed publicly releasing data</a>. I may eventually revisit launching the crime dashboard in the future. 
+            </p>
+            <p>
+                Unfortunately, the project became unmaintained when SLMPD stopped publicly releasing data at the end of 2020. Fortunately, after some pressure from a local news outlet, the city has <a class="hlight" href="https://www.stltoday.com/news/local/crime-courts/st-louis-police-publish-detailed-monthly-crime-data-for-first-time-in-3-years/article_6a0ac5d8-dbd0-11ee-b7e3-77aba9b02ce7.html">resumed publicly releasing data</a>. I may eventually revisit launching the crime dashboard in the future. 
             </p>
         </div>
-        
         <div id="wusm-tracker" class="project hideCondensed">
             <h3>Center Initiative Tracker</h3>
             <p>
                 The <a class="hlight" href="https://publichealth.wustl.edu/centers/cdi/">Center for Dissemination and Implementation at Washington University in St. Louis</a> was a newly established center during my time at WUSM.
-
-                As the leading technical member of the center, I was tasked with creating a visually appealing dashboard that we could share among stakeholders. Importantly, any member of the team needed the ability to update the dashboard in near real time.
-
-                To work within this constraint and to provide a familiar interface to all members of the team, I built this around a Google Sheet. This had the benefit of providing a single source of truth, updatable in real time that we could quickly facilitate adding or removing new members.
-                
-                Architecturally, it is just a simple Python Flask application, rendering a page built with JQuery. 
-
-                <a href="https://didash.bransonf.com">Demo Available</a>
             </p>
-            
+            <p>
+                As the leading technical member of the center, I was tasked with creating a visually appealing dashboard that we could share among stakeholders. Importantly, any member of the team needed the ability to update the dashboard in near real time.
+            </p>
+            <p>
+                To work within this constraint and to provide a familiar interface to all members of the team, I built this around a Google Sheet. This had the benefit of providing a single source of truth, updatable in real time that we could quickly facilitate adding or removing new members.
+            </p>
+            <p>
+                <a class="hlight" href="https://didash.bransonf.com">Demo Available</a>
+            </p>
         </div>
         <div id="wusm-access" class="project hideCondensed">
             <h3>Access to Care Analyses</h3>
@@ -406,23 +455,26 @@
                 With my collaborators, we produced an analysis observing thousands of individuals seeking testing for sexually transmitted infections via the emergency department. 
             </p>
             <p>
-                In our <a href="https://journals.lww.com/stdjournal/fulltext/2019/07000/presenting_to_the_emergency_department_versus.9.aspx">published findings</a>, we find that remarkably almost a third of all care-seekers missed an opportunity to use a sexual-health clinic that was more geographically accessible and would have offered them free, walk-in services.
+                In our <a class="hlight" href="https://journals.lww.com/stdjournal/fulltext/2019/07000/presenting_to_the_emergency_department_versus.9.aspx">published findings</a>, we find that remarkably almost a third of all care-seekers missed an opportunity to use a sexual-health clinic that was more geographically accessible and would have offered them free, walk-in services.
             </p>
         </div>
         <div id="wusm-tracing" class="project hideCondensed">
             <h3>Contact Tracing App</h3>
             <p>
                 Part of my responsibilities while at WUSM was working closely with our partners in the City's Department of Health. At the start of the pandemic, the DoH was struggling to process the rapid influx of data coming from hospitals, laboratories and other departments.
-
+            </p>
+            <p>
                 I built the initial prototype for transforming all of the data into a standard format before handing off my work to some volunteer consultants from a local firm.
             </p>
         </div>
         <div id="wusm-hl7" class="project hideCondensed">
             <h3>HL7 Parser</h3>
             <p>
-                As part of my efforts in developing the solution for contact tracing COVID-19 cases in St. Louis, Missouri, I built a custom HL7 parser in R to read the esoteric HL7 messaging format used by medical laboratories. Using this, we were able to identify tens of thousands of positive test results days before the statewide reporting results.
+                As part of my efforts in developing the solution for contact tracing COVID-19 cases in St. Louis, Missouri, I built a custom HL7 parser in R to read the esoteric HL7 messaging format used by medical laboratories. Using this, we were able to identify thousands of positive test results days before the statewide reporting results.
             </p>
-            Unmaintained: https://github.com/bransonf/hl7r
+            <p>
+                Unmaintained: <a class="hlight" href="https://github.com/bransonf/hl7r">hl7r Github</a>
+            </p>
         </div>
     </div>
     <div id="slu" class="project-content-box container section">
@@ -430,17 +482,18 @@
         <div id="slu-maup" class="project">
             <h3>Testing sensitivity to MAUP with Polyominoes</h3>
             <p>
-                In unfinished work, I begin to develop a sensitivity analysis to the Modifiable Areal Units Problem (MAUP) using <a href="https://en.m.wikipedia.org/wiki/Polyomino">Polyominoes</a>.
-
-                This unconvential approach to producing a randomized sampling kernel using Polyominoes offered a robust stochastic method both for the measurement of MAUP sensitivity as well as the re-allocation of aggregate spatial data for further analysis. It's main shortcoming, however, was the massive ammounts of compute required to scale the kernel size over larger or higher resolution geographic data.
-                
-
-                Made Possible by Matt Busche's Polycube program: https://www.mattbusche.org/blog/article/polycube/
-
-                You can also see some of my experiments with Polyomino-packing on this now-archived <a>homepage of my website.</a>
-
-                <!-- https://news.ycombinator.com/item?id=26393381 -->
+                In unfinished work, I begin to develop a sensitivity analysis to the Modifiable Areal Units Problem (MAUP) using <a class="hlight" href="https://en.m.wikipedia.org/wiki/Polyomino">Polyominoes</a>.
             </p>
+            <p>
+                This unconvential approach to producing a randomized sampling kernel using Polyominoes offered a robust stochastic method both for the measurement of MAUP sensitivity as well as the re-allocation of aggregate spatial data for further analysis. It's main shortcoming, however, was the massive ammounts of compute required to scale the kernel size over larger or higher resolution geographic data.
+            </p>
+            <p>
+                Made Possible by <a class="hlight" href="https://www.mattbusche.org/blog/article/polycube/">Matt Busche's Polycube program</a>
+            </p>    
+            <p>
+                You can also see some of my experiments with Polyomino-packing on this now-archived <a class="hlight" href="https://bransonf.com/archive">homepage of my website.</a>
+            </p>
+            <!-- https://news.ycombinator.com/item?id=26393381 -->
         </div>
         <div id="slu-civic" class="project">
             <h3>Patterns of Civic Engagement</h3>
@@ -461,27 +514,34 @@
         <div id="slu-geocode" class="project">
             <h3>Building an Open Source Geocoder</h3>
             <p>
-                Geocoding, the act of converting an address string into a numeric location, was a central part of my education in GIS and a recurrent theme in my research. After having dealt with a number of nuanced datasets that required specific preprocessing to achieve desriable geocodes, Chris Prener and I decided to build our own.
-
-                We compared a number of commercial geocoding options available at the time, including several free sources, and published our findings in Trasactions in GIS.
+                Geocoding, the act of converting an address string into a numeric location, was a central part of my education in GIS and a recurrent neccessity in my research. After having dealt with a number of nuanced datasets that required specific preprocessing to achieve desriable geocodes, Chris Prener and I decided to build our own.
+            </p>
+            <p>
+                We built our own geocoder in R and compared it with a number of commercial geocoding options available at the time, including several free sources, and published our findings in <a class="hlight" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/tgis.12741">Trasactions in GIS.</a>
             </p>
         </div>
         <div id="slu-areal" class="project">
             <h3>areal R package</h3>
             <p>
                 The Modifiable Areal Units Problem (MAUP) was a key component of my studies and research in GIS. 
-
+            </p>
+            <p>
                 With the areal R package, Chris Prener and I attempt to implement a variety of methods for areal weighted interpolation using the spatial features (SF) framework in place of the older SP framework for spatial data in R.
-
+            </p>
+            <p>
                 Dasymetric, Pycnophylactic, Regression and Hybrid methods were implemented for both spatially intensive and extensive data types.
+            </p>
+            <p>
+                Currently Maintained by Chris Prener: <a class="hlight" href="https://github.com/chris-prener/areal">areal Github</a>
             </p>
         </div>
         <div id="slu-vacancy" class="project">
             <h3>Creating a Definition of Vacancy</h3>
             <p>
-                St. Louis, Missouri has experienced one of the most salient urban declines in the country, resulting in a rise of property vacancy. It was long suspected this was pivotal in a variety of worsened outcomes, but a clear definition of vacancy and the corresponding number and location of vacant properties was unknown. I played a foundational role in building the defintion, data infrastructure and dissemination of the number of vacant properties in St. Louis.
-
-                I became heavily involved in the <a href="https://www.stlvacancy.com/">St. Louis Vacancy Collaborative</a> including the creation and implementation of the <a href="https://docs.google.com/document/d/1s5eSS_hIZTUH0kCArw58N-TBUvT8VB57KeF6LvGBX34/edit">Vacant Property Methodology</a>.
+                St. Louis, Missouri has experienced one of the most salient urban declines in the country, resulting in a rise of property vacancy. It was long suspected this was pivotal in a variety of worsened outcomes, but a clear definition of vacancy and the corresponding number and location of vacant properties was unknown. I played a foundational role in building the defintion, data infrastructure and dissemination of the number and locations of vacant properties in St. Louis.
+            </p>
+            <p>
+                I became heavily involved in the <a class="hlight" href="https://www.stlvacancy.com/">St. Louis Vacancy Collaborative</a> including the creation and implementation of the <a class="hlight" href="https://docs.google.com/document/d/1s5eSS_hIZTUH0kCArw58N-TBUvT8VB57KeF6LvGBX34/edit">Vacant Property Methodology</a>.
             </p>
         </div>
         <div id="slu-mortgage" class="project hideCondensed">
@@ -503,11 +563,15 @@
             <h3>Scooter Distribution</h3>
             <p>
                 As part of the permitting process to allow dockless vehicle (bicycle & scooter) companies to operate in the City of St. Louis, companies are required to <a class="hlight" href="https://www.stlouis-mo.gov/government/departments/street/traffic/bicycling/st-louis-dockless-bike-share-faq.cfm#5">park 16% of their fleet in designated equity zones.</a>
-                <br>
+            </p>
+            <p>
+
                 After observing a heavy concentration of vehicles in the more-affluent central cooridor of the City, I was determined to validate whether these equity targets were in-fact being met.
-                <br>
+            </p>
+            <p>
                 After being declined access to the data from a number of Rideshare companies, I <a class="hlight" href="https://github.com/ubahnverleih/WoBike">reverse-engineered their APIs</a> and logged vehicle locations for several weeks.
-                <br>
+            </p>
+            <p>
                 After collecting several weeks of data, I was confident that the operating companies were not adhering to this stipulation in the permit. Neither local news outlets nor the City Traffic Division were interested in evaluating my data.
             </p>
         </div>
@@ -519,6 +583,9 @@
             <p>
                 I created two methodical road network models representing the City of St. Louis with and without these barriers, including speed limits and turn penalties. I then ran simulated routes originating from various emergency service locations and reaching every building footprint in the City.
             </p> 
+            <p>
+                After completing my undergraduate studies I lost access to the license neccessary to use the road network data and I stopped pursuing this line of research.
+            </p>
             <p>
                 This built on the work of Chris Prener's <a class="hlight" href="https://osf.io/preprints/socarxiv/2wext">street closure research</a>
             </p>
@@ -567,19 +634,25 @@
                     <li>Large Systems Design</li>
                     <li>Low Latency Streaming</li>
                     <li>Batch Workloads</li>
+                    <li>Linux Adminstration</li>
                 </ul>
             </div>
             <div class="gtpItem">
                 <h3>Frameworks/Libraries</h3>
                 <ul>
                     <li>Spark (Python, Scala, SQL)</li>
-                    <li>Hadoop</li>
-                    <li>Dask, Coiled</li>
                     <li>Docker (Compose, Kubernetes)</li>
-                    <li>Linux Adminstration</li>
                     <li>Serverless (AWS, Azure, GCP)</li>
-                    <li>GDAL, PDAL, OGR, Grass</li>
                 </ul>
+            </div>
+            <div class="gtpItem">
+                <h3>GIS Utilities</h3>
+                <li>GDAL</li>
+                <li>PDAL</li>
+                <li>OGR</li>
+                <li>Grass</li>
+                <li>PostGIS</li>
+                <li>ArcGIS Suite (Desktop + Server)</li>
             </div>
             <div class="gtpItem">
                 <h3>Other Assorted Software</h3>
@@ -589,6 +662,8 @@
                     <li>Metabase API</li>
                     <li>ArcGIS/QGIS</li>
                     <li>XCP-ng</li>
+                    <li>Sentry</li>
+                    <li>DataDog</li>
                 </ul>
             </div>
         </div>
