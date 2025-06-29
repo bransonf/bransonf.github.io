@@ -1,0 +1,172 @@
+[FIA Ownership Raster] -> [fia_point_sample]
+
+[<table> fia_point_sample | 
+site_id ||
+    ownership ||
+    wkt
+]
+
+[fia_point_sample] -> [<reference> ST_Intersects]
+[parcel_geometry_5070] -> [ST_Intersects]
+[ST_Intersects] -> [all_parcel_fia_class]
+
+[<table> all_parcel_fia_class |
+ll_uuid ||
+    site_id ||
+    ownership
+]
+
+// ReGrid Data
+[<abstract> ReGrid Data | hrm.raw_regrid_data ] -> [parcel_geometry_5070]
+
+[<table> parcel_geometry_5070 | 
+ll_uuid ||
+    wkt ||
+    acreage
+]
+
+[ReGrid Data] -> [parcel_owner_identity]
+
+[<table> parcel_owner_identity |
+ll_uuid ||
+    owner_name ||
+    mail_address ||
+    mail_city ||
+    mail_state ||
+    mail_zip ||
+    zip5 = substr(mail_zip, 1, 5)
+]
+
+[parcel_owner_identity] -> [<reference> CROSS JOIN | (zip5 = zip5)]
+
+
+[CROSS JOIN] -> [<table> name_index |
+name1 ||
+    name2 ||
+    zip5 ||
+    jaro = (JaroWinkler UDF)
+]
+[CROSS JOIN] -> [<table> address_index |
+address1 ||
+    address2 ||
+    zip5 ||
+    jaro = (JaroWinkler UDF)
+]
+
+
+[name_index] -> [<reference> WHERE jaro < 0.15]
+[WHERE jaro < 0.15] -> [name_index_threshold]
+[<table> name_index_threshold |
+name1 ||
+    name2 ||
+    zip5 ||
+    jaro 
+]
+
+[address_index] -> [<reference> WHERE jaro < 0.05]
+[WHERE jaro < 0.05] -> [address_index_threshold]
+[<table> address_index_threshold |
+address1 ||
+    address2 ||
+    zip5 ||
+    jaro
+]
+
+[parcel_owner_identity] -> [<reference> isnotnull(owner_name, mail_address, zip5)]
+[isnotnull(owner_name, mail_address, zip5)] -> [<table> sample_identity |
+ll_uuid ||
+    owner_name ||
+    mail_address ||
+    zip5
+]
+
+[sample_identity] -> [<reference> INNER JOIN | SELECT mail_address as alt_address]
+[address_index_threshold] -> [INNER JOIN]
+[INNER JOIN] -> [<table> sid_alt_add |
+ll_uuid ||
+    owner_name ||
+    mail_address ||
+    zip5 ||
+    alt_address ||
+    address_jaro
+]
+
+[sid_alt_add] -> [<reference> INNER JOIN _ | SELECT owner_name as alt_name]
+[name_index_threshold] -> [INNER JOIN _]
+[INNER JOIN _] -> [<table> sid_alt_add_name |
+ll_uuid ||
+    owner_name ||
+    mail_address ||
+    zip5 ||
+    alt_address ||
+    address_jaro ||
+    alt_name ||
+    name_jaro
+]
+
+[isnotnull(owner_name, mail_address, zip5)] -> [<table> parcel_owner_identity_valid |
+ll_uuid ||
+    owner_name ||
+    mail_address ||
+    zip5 ||
+    PARTITIONED BY(zip5)
+]
+
+[sid_alt_add_name] -> [<table> sid_alt_add_name_partial |
+ll_uuid ||
+    zip5 ||
+    alt_address ||
+    alt_name ||
+    PARTITIONED BY(zip5)
+]
+
+[sid_alt_add_name_partial] -> [<reference> LEFT JOIN | ON alt_name, alt_address, zip5 | WHERE ll_uuid != ll_uuid]
+[parcel_owner_identity_valid] -> [LEFT JOIN]
+[LEFT JOIN] -> [<table> sample_alternative_parcels_partial |
+ll_uuid ||
+    zip5 ||
+    alt_ll_uuid
+]
+
+[sample_alternative_parcels_partial] -> [<reference> SELECT DISTINCT |
+x,y
+    y,x -> x,y
+]
+[SELECT DISTINCT] -> [<table> sample_pairs |
+ll_uuid ||
+    alt_ll_uuid
+]
+
+[sample_pairs] -> [<reference> GraphFrame.fromEdges().connectedComponents]
+[GraphFrame.fromEdges().connectedComponents] -> [<table> cc_mapping |
+id ||
+    component
+]
+
+[cc_mapping] -> [<reference> SELECT min(id) as parent_ll_uuid | GROUP BY component]
+[SELECT min(id) as parent_ll_uuid] -> [<table> parent_mapping |
+parent_ll_uuid ||
+    ll_uuid
+]
+
+[parcel_owner_identity_valid] -> [<reference> INSERT WHERE isnull(parent_ll_uuid) | LEFT JOIN parent_mapping ON ll_uuid]
+[INSERT WHERE isnull(parent_ll_uuid)] -> [parent_mapping]
+
+[parent_mapping] -> [<reference> LEFT JOIN _ | acreage FROM parcel_geometry_5070 | ownership FROM all_parcel_fia_class]
+[parcel_geometry_5070] -> [LEFT JOIN _]
+[all_parcel_fia_class] -> [LEFT JOIN _]
+
+[LEFT JOIN _] -> [<table> parcel_set_reclassification |
+parent_ll_uuid ||
+    ll_uuid ||
+    acreage ||
+    ownership
+]
+
+[parcel_set_reclassification] -> [<reference> GROUP BY parent_ll_uuid | sum(acreage) as total_acres | first(ownership) | ORDER BY total_class_acres DESC]
+
+[GROUP BY parent_ll_uuid] -> [<table> parent_classification |
+parent_ll_uuid ||
+    ownership ||
+    total_acres
+]
