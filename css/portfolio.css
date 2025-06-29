@@ -259,17 +259,17 @@ a.hlight:hover {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 667px) {
     #navBlock {
         position: relative;
         text-align: center;
         right: 0;
-        bottom: 180px;
+        bottom: 200px;
         top: auto;
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 414px) {
     #navBlock {
         bottom: 230px;
     }
